@@ -21,3 +21,7 @@ Route::get('/', function () {
 Route::get('/admin', function () {
     return view("/admin/layout/baground");
 });
+
+Route::get("/home", function() {
+    return view("/admin/home");
+});

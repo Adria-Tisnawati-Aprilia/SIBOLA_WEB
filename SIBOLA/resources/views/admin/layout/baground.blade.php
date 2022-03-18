@@ -1,281 +1,444 @@
 
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <!--IE Compatibility modes-->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!--Mobile first-->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Dashboard</title>
-
-    <meta name="description" content="Free Admin Template Based On Twitter Bootstrap 3.x">
-    <meta name="author" content="">
-
-    <meta name="msapplication-TileColor" content="#5bc0de" />
-    <meta name="msapplication-TileImage" content="{{ url('/template/public') }}/assets/img/metis-tile.png" />
-
-    @include('admin.layout.partials.css.style')
-
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.5/fullcalendar.min.css">
-    <script>
-        less = {
-            env: "development",
-            relativeUrls: false,
-            rootpath: "/assets/"
-        };
-    </script>
-    <link rel="stylesheet" href="{{ url('/template/public') }}/assets/css/style-switcher.css">
-    <link rel="stylesheet/less" type="text/css" href="{{ url('/template/public') }}/assets/less/theme.less">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.js"></script>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Mazer Admin Dashboard</title>
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    @include("admin.layout.partials.css.style")
+    @include("admin.layout.partials.js.style")
 </head>
 
-<body class="  ">
-    <div class="bg-dark dk" id="wrap">
-        <div id="top">
-            <!-- .navbar -->
-            <nav class="navbar navbar-inverse navbar-static-top">
-                <div class="container-fluid">
-
-
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <header class="navbar-header">
-
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a href="index.html" class="navbar-brand"><img src="{{ url('/template/public') }}/assets/img/logo.png" alt=""></a>
-
-                    </header>
-
-
-
-                    <div class="topnav">
-                        <div class="btn-group">
-                            <a data-placement="bottom" data-original-title="Fullscreen" data-toggle="tooltip"
-                            class="btn btn-default btn-sm" id="toggleFullScreen">
-                            <i class="glyphicon glyphicon-fullscreen"></i>
-                        </a>
+<body>
+    <div id="app">
+        <div id="sidebar" class="active">
+            <div class="sidebar-wrapper active">
+                <div class="sidebar-header">
+                    <div class="d-flex justify-content-between">
+                        <div class="logo">
+                            <a href="index.html"><img src="{{url('web/dist')}}/assets/images/logo/logo.png" alt="Logo" srcset=""></a>
+                        </div>
+                        <div class="toggler">
+                            <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+                        </div>
                     </div>
-                    <div class="btn-group">
-                        <a data-placement="bottom" data-original-title="E-mail" data-toggle="tooltip"
-                        class="btn btn-default btn-sm">
-                        <i class="fa fa-envelope"></i>
-                        <span class="label label-warning">5</span>
+                </div>
+                <div class="sidebar-menu">
+                    <ul class="menu">
+                        <li class="sidebar-title">Menu</li>
+                        
+                        <li
+                        class="sidebar-item active ">
+                        <a href="index.html" class='sidebar-link'>
+                            <i class="bi bi-grid-fill"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    
+                    <li
+                    class="sidebar-item  has-sub">
+                    <a href="#" class='sidebar-link'>
+                        <i class="bi bi-stack"></i>
+                        <span>Components</span>
                     </a>
-                    <a data-placement="bottom" data-original-title="Messages" href="#" data-toggle="tooltip"
-                    class="btn btn-default btn-sm">
-                    <i class="fa fa-comments"></i>
-                    <span class="label label-danger">4</span>
+                    <ul class="submenu ">
+                        <li class="submenu-item ">
+                            <a href="component-alert.html">Alert</a>
+                        </li>
+                        <li class="submenu-item ">
+                            <a href="component-badge.html">Badge</a>
+                        </li>
+                        <li class="submenu-item ">
+                            <a href="component-breadcrumb.html">Breadcrumb</a>
+                        </li>
+                        <li class="submenu-item ">
+                            <a href="component-button.html">Button</a>
+                        </li>
+                        <li class="submenu-item ">
+                            <a href="component-card.html">Card</a>
+                        </li>
+                        <li class="submenu-item ">
+                            <a href="component-carousel.html">Carousel</a>
+                        </li>
+                        <li class="submenu-item ">
+                            <a href="component-dropdown.html">Dropdown</a>
+                        </li>
+                        <li class="submenu-item ">
+                            <a href="component-list-group.html">List Group</a>
+                        </li>
+                        <li class="submenu-item ">
+                            <a href="component-modal.html">Modal</a>
+                        </li>
+                        <li class="submenu-item ">
+                            <a href="component-navs.html">Navs</a>
+                        </li>
+                        <li class="submenu-item ">
+                            <a href="component-pagination.html">Pagination</a>
+                        </li>
+                        <li class="submenu-item ">
+                            <a href="component-progress.html">Progress</a>
+                        </li>
+                        <li class="submenu-item ">
+                            <a href="component-spinner.html">Spinner</a>
+                        </li>
+                        <li class="submenu-item ">
+                            <a href="component-tooltip.html">Tooltip</a>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li
+                class="sidebar-item  has-sub">
+                <a href="#" class='sidebar-link'>
+                    <i class="bi bi-collection-fill"></i>
+                    <span>Extra Components</span>
                 </a>
-                <a data-toggle="modal" data-original-title="Help" data-placement="bottom"
-                class="btn btn-default btn-sm"
-                href="#helpModal">
-                <i class="fa fa-question"></i>
-            </a>
-        </div>
-        <div class="btn-group">
-            <a href="login.html" data-toggle="tooltip" data-original-title="Logout" data-placement="bottom"
-            class="btn btn-metis-1 btn-sm">
-            <i class="fa fa-power-off"></i>
-        </a>
-    </div>
-    <div class="btn-group">
-        <a data-placement="bottom" data-original-title="Show / Hide Left" data-toggle="tooltip"
-        class="btn btn-primary btn-sm toggle-left" id="menu-toggle">
-        <i class="fa fa-bars"></i>
-    </a>
-    <a href="#right" data-toggle="onoffcanvas" class="btn btn-default btn-sm" aria-expanded="false">
-        <span class="fa fa-fw fa-comment"></span>
-    </a>
-</div>
-
-</div>
-
-
-
-
-<div class="collapse navbar-collapse navbar-ex1-collapse">
-
-    <!-- .nav -->
-    <ul class="nav navbar-nav">
-        <li class="active"><a href="dashboard.html">Dashboard</a></li>
-        <li><a href="table.html">Tables</a></li>
-        <li class='dropdown '>
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Form Elements <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-                <li><a href="form-general.html">General</a></li>
-                <li><a href="form-validation.html">Validation</a></li>
-                <li><a href="form-wysiwyg.html">WYSIWYG</a></li>
-                <li><a href="form-wizard.html">Wizard &amp; File Upload</a></li>
-            </ul>
-        </li>
-    </ul>
-    <!-- /.nav -->
-</div>
-</div>
-<!-- /.container-fluid -->
-</nav>
-<!-- /.navbar -->
-<header class="head">
-    <div class="search-bar">
-        <form class="main-search" action="">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Live Search ...">
-                <span class="input-group-btn">
-                    <button class="btn btn-primary btn-sm text-muted" type="button">
-                        <i class="fa fa-search"></i>
-                    </button>
-                </span>
-            </div>
-        </form>
-        <!-- /.main-search -->
-    </div>
-    <!-- /.search-bar -->
-    <div class="main-bar">
-        <h3>
-            <i class="fa fa-dashboard"></i>&nbsp;
-            Dashboard
-        </h3>
-    </div>
-    <!-- /.main-bar -->
-</header>
-<!-- /.head -->
-</div>
-<!-- /#top -->
-<div id="left">
-    <div class="media user-media bg-dark dker">
-        <div class="user-media-toggleHover">
-            <span class="fa fa-user"></span>
-        </div>
-        <div class="user-wrapper bg-dark">
-            <a class="user-link" href="">
-                <img class="media-object img-thumbnail user-img" alt="User Picture" src="{{ url('/template/public') }}/assets/img/user.gif">
-                <span class="label label-danger user-label">16</span>
-            </a>
-
-            <div class="media-body">
-                <h5 class="media-heading">Archie</h5>
-                <ul class="list-unstyled user-info">
-                    <li><a href="">Administrator</a></li>
-                    <li>Last Access : <br>
-                        <small><i class="fa fa-calendar"></i>&nbsp;16 Mar 16:32</small>
+                <ul class="submenu ">
+                    <li class="submenu-item ">
+                        <a href="extra-component-avatar.html">Avatar</a>
+                    </li>
+                    <li class="submenu-item ">
+                        <a href="extra-component-sweetalert.html">Sweet Alert</a>
+                    </li>
+                    <li class="submenu-item ">
+                        <a href="extra-component-toastify.html">Toastify</a>
+                    </li>
+                    <li class="submenu-item ">
+                        <a href="extra-component-rating.html">Rating</a>
+                    </li>
+                    <li class="submenu-item ">
+                        <a href="extra-component-divider.html">Divider</a>
                     </li>
                 </ul>
+            </li>
+            
+            <li
+            class="sidebar-item  has-sub">
+            <a href="#" class='sidebar-link'>
+                <i class="bi bi-grid-1x2-fill"></i>
+                <span>Layouts</span>
+            </a>
+            <ul class="submenu ">
+                <li class="submenu-item ">
+                    <a href="layout-default.html">Default Layout</a>
+                </li>
+                <li class="submenu-item ">
+                    <a href="layout-vertical-1-column.html">1 Column</a>
+                </li>
+                <li class="submenu-item ">
+                    <a href="layout-vertical-navbar.html">Vertical Navbar</a>
+                </li>
+                <li class="submenu-item ">
+                    <a href="layout-rtl.html">RTL Layout</a>
+                </li>
+                <li class="submenu-item ">
+                    <a href="layout-horizontal.html">Horizontal Menu</a>
+                </li>
+            </ul>
+        </li>
+
+</ul>
+</div>
+<button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+</div>
+</div>
+<div id="main">
+    <header class="mb-3">
+        <a href="#" class="burger-btn d-block d-xl-none">
+            <i class="bi bi-justify fs-3"></i>
+        </a>
+    </header>
+    
+    <div class="page-heading">
+        <h3>Profile Statistics</h3>
+    </div>
+    <div class="page-content">
+        <section class="row">
+            <div class="col-12 col-lg-9">
+                <div class="row">
+                    <div class="col-6 col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body px-3 py-4-5">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="stats-icon purple">
+                                            <i class="iconly-boldShow"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h6 class="text-muted font-semibold">Profile Views</h6>
+                                        <h6 class="font-extrabold mb-0">112.000</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body px-3 py-4-5">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="stats-icon blue">
+                                            <i class="iconly-boldProfile"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h6 class="text-muted font-semibold">Followers</h6>
+                                        <h6 class="font-extrabold mb-0">183.000</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body px-3 py-4-5">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="stats-icon green">
+                                            <i class="iconly-boldAdd-User"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h6 class="text-muted font-semibold">Following</h6>
+                                        <h6 class="font-extrabold mb-0">80.000</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body px-3 py-4-5">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="stats-icon red">
+                                            <i class="iconly-boldBookmark"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h6 class="text-muted font-semibold">Saved Post</h6>
+                                        <h6 class="font-extrabold mb-0">112</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Profile Visit</h4>
+                            </div>
+                            <div class="card-body">
+                                <div id="chart-profile-visit"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-xl-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Profile Visit</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="d-flex align-items-center">
+                                            <svg class="bi text-primary" width="32" height="32" fill="blue"
+                                            style="width:10px">
+                                            <use
+                                            xlink:href="assets/vendors/bootstrap-icons/bootstrap-icons.svg#circle-fill" />
+                                        </svg>
+                                        <h5 class="mb-0 ms-3">Europe</h5>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <h5 class="mb-0">862</h5>
+                                </div>
+                                <div class="col-12">
+                                    <div id="chart-europe"></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="d-flex align-items-center">
+                                        <svg class="bi text-success" width="32" height="32" fill="blue"
+                                        style="width:10px">
+                                        <use
+                                        xlink:href="assets/vendors/bootstrap-icons/bootstrap-icons.svg#circle-fill" />
+                                    </svg>
+                                    <h5 class="mb-0 ms-3">America</h5>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <h5 class="mb-0">375</h5>
+                            </div>
+                            <div class="col-12">
+                                <div id="chart-america"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <svg class="bi text-danger" width="32" height="32" fill="blue"
+                                    style="width:10px">
+                                    <use
+                                    xlink:href="assets/vendors/bootstrap-icons/bootstrap-icons.svg#circle-fill" />
+                                </svg>
+                                <h5 class="mb-0 ms-3">Indonesia</h5>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <h5 class="mb-0">1025</h5>
+                        </div>
+                        <div class="col-12">
+                            <div id="chart-indonesia"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-xl-8">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Latest Comments</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-lg">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Comment</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-3">
+                                        <div class="d-flex align-items-center">
+                                            <div class="avatar avatar-md">
+                                                <img src="{{url('web/dist')}}/assets/images/faces/5.jpg">
+                                            </div>
+                                            <p class="font-bold ms-3 mb-0">Si Cantik</p>
+                                        </div>
+                                    </td>
+                                    <td class="col-auto">
+                                        <p class=" mb-0">Congratulations on your graduation!</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-3">
+                                        <div class="d-flex align-items-center">
+                                            <div class="avatar avatar-md">
+                                                <img src="{{url('web/dist')}}/assets/images/faces/2.jpg">
+                                            </div>
+                                            <p class="font-bold ms-3 mb-0">Si Ganteng</p>
+                                        </div>
+                                    </td>
+                                    <td class="col-auto">
+                                        <p class=" mb-0">Wow amazing design! Can you make another tutorial for
+                                            this design?</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <!-- #menu -->
-    @include('admin.layout.partials.navbar.menu')
-    <!-- /#menu -->
-</div>
-<!-- /#left -->
-<div id="content">
-    @yield("content")
-</div>
-<!-- /#content -->
-
-<div id="right" class="onoffcanvas is-right is-fixed bg-light" aria-expanded=false>
-    <a class="onoffcanvas-toggler" href="#right" data-toggle=onoffcanvas aria-expanded=false></a>
-    <br>
-    <br>
-    <div class="alert alert-danger">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <strong>Warning!</strong> Best check yo self, you're not looking too good.
-    </div>
-    <!-- .well well-small -->
-    <div class="well well-small dark">
-        <ul class="list-unstyled">
-            <li>Visitor <span class="inlinesparkline pull-right">1,4,4,7,5,9,10</span></li>
-            <li>Online Visitor <span class="dynamicsparkline pull-right">Loading..</span></li>
-            <li>Popularity <span class="dynamicbar pull-right">Loading..</span></li>
-            <li>New Users <span class="inlinebar pull-right">1,3,4,5,3,5</span></li>
-        </ul>
-    </div>
-    <!-- /.well well-small -->
-    <!-- .well well-small -->
-    <div class="well well-small dark">
-        <button class="btn btn-block">Default</button>
-        <button class="btn btn-primary btn-block">Primary</button>
-        <button class="btn btn-info btn-block">Info</button>
-        <button class="btn btn-success btn-block">Success</button>
-        <button class="btn btn-danger btn-block">Danger</button>
-        <button class="btn btn-warning btn-block">Warning</button>
-        <button class="btn btn-inverse btn-block">Inverse</button>
-        <button class="btn btn-metis-1 btn-block">btn-metis-1</button>
-        <button class="btn btn-metis-2 btn-block">btn-metis-2</button>
-        <button class="btn btn-metis-3 btn-block">btn-metis-3</button>
-        <button class="btn btn-metis-4 btn-block">btn-metis-4</button>
-        <button class="btn btn-metis-5 btn-block">btn-metis-5</button>
-        <button class="btn btn-metis-6 btn-block">btn-metis-6</button>
-    </div>
-    <!-- /.well well-small -->
-    <!-- .well well-small -->
-    <div class="well well-small dark">
-        <span>Default</span><span class="pull-right"><small>20%</small></span>
-
-        <div class="progress xs">
-            <div class="progress-bar progress-bar-info" style="width: 20%"></div>
-        </div>
-        <span>Success</span><span class="pull-right"><small>40%</small></span>
-
-        <div class="progress xs">
-            <div class="progress-bar progress-bar-success" style="width: 40%"></div>
-        </div>
-        <span>warning</span><span class="pull-right"><small>60%</small></span>
-
-        <div class="progress xs">
-            <div class="progress-bar progress-bar-warning" style="width: 60%"></div>
-        </div>
-        <span>Danger</span><span class="pull-right"><small>80%</small></span>
-
-        <div class="progress xs">
-            <div class="progress-bar progress-bar-danger" style="width: 80%"></div>
-        </div>
-    </div>
-</div>
-<!-- /#right -->
-</div>
-<!-- /#wrap -->
-@include('admin.layout.partials.footer.foot')
-<!-- /#footer -->
-<!-- #helpModal -->
-<div id="helpModal" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Modal title</h4>
-            </div>
-            <div class="modal-body">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <div class="col-12 col-lg-3">
+        <div class="card">
+            <div class="card-body py-4 px-5">
+                <div class="d-flex align-items-center">
+                    <div class="avatar avatar-xl">
+                        <img src="{{url('web/dist')}}/assets/images/faces/1.jpg" alt="Face 1">
+                    </div>
+                    <div class="ms-3 name">
+                        <h5 class="font-bold">John Duck</h5>
+                        <h6 class="text-muted mb-0">@johnducky</h6>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
+        <div class="card">
+            <div class="card-header">
+                <h4>Recent Messages</h4>
+            </div>
+            <div class="card-content pb-4">
+                <div class="recent-message d-flex px-4 py-3">
+                    <div class="avatar avatar-lg">
+                        <img src="{{url('web/dist')}}/assets/images/faces/4.jpg">
+                    </div>
+                    <div class="name ms-4">
+                        <h5 class="mb-1">Hank Schrader</h5>
+                        <h6 class="text-muted mb-0">@johnducky</h6>
+                    </div>
+                </div>
+                <div class="recent-message d-flex px-4 py-3">
+                    <div class="avatar avatar-lg">
+                        <img src="{{url('web/dist')}}/assets/images/faces/5.jpg">
+                    </div>
+                    <div class="name ms-4">
+                        <h5 class="mb-1">Dean Winchester</h5>
+                        <h6 class="text-muted mb-0">@imdean</h6>
+                    </div>
+                </div>
+                <div class="recent-message d-flex px-4 py-3">
+                    <div class="avatar avatar-lg">
+                        <img src="{{url('web/dist')}}/assets/images/faces/1.jpg">
+                    </div>
+                    <div class="name ms-4">
+                        <h5 class="mb-1">John Dodol</h5>
+                        <h6 class="text-muted mb-0">@dodoljohn</h6>
+                    </div>
+                </div>
+                <div class="px-4">
+                    <button class='btn btn-block btn-xl btn-light-primary font-bold mt-3'>Start
+                        Conversation</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h4>Visitors Profile</h4>
+                </div>
+                <div class="card-body">
+                    <div id="chart-visitors-profile"></div>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
-<!-- /.modal -->
-<!-- /#helpModal -->
-<!--jQuery -->
-@include('admin.layout.partials.js.style')
+
+<footer>
+    <div class="footer clearfix mb-0 text-muted">
+        <div class="float-start">
+            <p>2021 &copy; Mazer</p>
+        </div>
+        <div class="float-end">
+            <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
+                href="http://ahmadsaugi.com">A. Saugi</a></p>
+            </div>
+        </div>
+    </footer>
+</div>
+</div>
+<script src="{{url('web/dist')}}/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+<script src="{{url('web/dist')}}/assets/js/bootstrap.bundle.min.js"></script>
+
+<script src="{{url('web/dist')}}/assets/vendors/apexcharts/apexcharts.js"></script>
+<script src="{{url('web/dist')}}/assets/js/pages/dashboard.js"></script>
+
+<script src="{{url('web/dist')}}/assets/js/mazer.js"></script>
 </body>
 
 </html>

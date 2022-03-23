@@ -43,9 +43,23 @@
                 </li>
 
                 <li class="sidebar-item ">
-                    <a href="index.html" class='sidebar-link'>
+                    <a href="{{ url('/admin/user') }}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
-                        <span>Dashboard</span>
+                        <span>User</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item ">
+                    <a href="{{ url('/admin/penyewaan') }}" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Penyewaan</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item ">
+                    <a href="{{ url('/admin/laporan') }}" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Laporan</span>
                     </a>
                 </li>
 

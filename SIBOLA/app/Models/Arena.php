@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Arena extends Model
 {
     use HasFactory;
+
+    protected $table = "tb_arena";
+
+    protected $guarded = [''];
+
+    public $timestamps = false;
 }

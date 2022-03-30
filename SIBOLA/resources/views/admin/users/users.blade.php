@@ -37,18 +37,33 @@
         <div class="card">
                     <div class="card-content">
                         <div class="card-body">
-                            <h4 class="card-title">Tambah Hak Akses</h4>
+                            <h4 class="card-title">Tambah Users</h4>
                             <form class="form" method="post">
                                 <div class="form-body">
                                     <div class="form-group">
-                                        <label for="feedback1" class="sr-only">Id Hak Akses</label>
-                                        <input type="text" id="feedback1" class="form-control" placeholder="Id Hak Akses"
-                                            name="id hak akses">
+                                        <label for="feedback1" class="sr-only">Id Users</label>
+                                        <input type="text" id="feedback1" class="form-control" placeholder="Id Users"
+                                            name="id users">
                                     </div>
                                     <div class="form-group">
                                         <label for="feedback4" class="sr-only">Nama</label>
                                         <input type="text" id="feedback4" class="form-control" placeholder="Nama"
                                             name="nama">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="feedback4" class="sr-only">Email</label>
+                                        <input type="email" id="feedback4" class="form-control" placeholder="Email"
+                                            name="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="feedback4" class="sr-only">Password</label>
+                                        <input type="password" id="feedback4" class="form-control" placeholder="NPassword"
+                                            name="password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="feedback4" class="sr-only">Id Hak Akses</label>
+                                        <input type="text" id="feedback4" class="form-control" placeholder="Id Hak Akses"
+                                            name="id hak askses">
                                     </div>
                                 </div>
                                 <div class="form-actions d-flex justify-content-end">

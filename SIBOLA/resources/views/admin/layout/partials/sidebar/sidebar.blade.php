@@ -63,6 +63,13 @@
                     </a>
                 </li>
 
+                <li class="sidebar-item ">
+                    <a href="{{ url('/admin/laporan') }}" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Laporan</span>
+                    </a>
+                </li>
+
                 <li class="sidebar-item  has-sub">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-stack"></i>

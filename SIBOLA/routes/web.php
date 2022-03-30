@@ -56,3 +56,7 @@ Route::get("/users", function() {
 Route::get("/lapangan", function() {
     return view("/admin/lapangan/lapangan");
 });
+
+Route::get("/booking", function() {
+    return view("/admin/booking/booking");
+});

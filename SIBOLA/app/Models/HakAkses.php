@@ -9,7 +9,7 @@ class HakAkses extends Model
 {
     use HasFactory;
 
-    protected $table = "tb_hakakses";
+    protected $table = "hak_akses";
 
     protected $guarded = [''];
 

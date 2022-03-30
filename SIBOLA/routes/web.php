@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\ArenaController;
+use App\Http\Controllers\HakAksesController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::prefix("admin")->group(function() {
+    Route::resource("/hak_akses", HakAksesController::class);
+    Route::get("/users", [UsersController::class, "index"]);
+});
 
 Route::get('/', function () {
     return view('welcome');
@@ -41,7 +49,7 @@ Route::get("/login", function() {
     return view("/login/login");
 });
 
-Route::get("/arena", [LandingPageController::class, "index"]);
+Route::get("/arena", [ArenaController::class, "index"]);
 
 Route::get("/hak_akses", function() {
     return view("/admin/hak_akses/index");

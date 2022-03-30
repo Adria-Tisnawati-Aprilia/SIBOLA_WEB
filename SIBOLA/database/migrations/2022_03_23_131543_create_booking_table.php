@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('booking', function (Blueprint $table) {
-            $table->string("kode_booking")->primary();
+            $table->string("kode_bookiwng")->primary();
             $table->date("tgl_booking");
             $table->date("tgl_main");
             $table->string("nama_arena");

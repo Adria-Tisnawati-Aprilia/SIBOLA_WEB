@@ -3,5 +3,11 @@
 
 <script src="{{url('web/dist')}}/assets/vendors/apexcharts/apexcharts.js"></script>
 <script src="{{url('web/dist')}}/assets/js/pages/dashboard.js"></script>
+<script src="{{url('web/dist')}}/assets/vendors/simple-datatables/simple-datatables.js"></script>
+<script>
+    let table1 = document.querySelector('#table1');
+    let dataTable = new simpleDatatables.DataTable(table1);
+</script>
 
 <script src="{{url('web/dist')}}/assets/js/mazer.js"></script>
+

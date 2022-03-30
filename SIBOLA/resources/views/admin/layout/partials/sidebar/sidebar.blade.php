@@ -45,7 +45,7 @@
                 <li class="sidebar-item ">
                     <a href="{{ url('/admin/user') }}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
-                        <span>User</span>
+                        <span>Users</span>
                     </a>
                 </li>
 

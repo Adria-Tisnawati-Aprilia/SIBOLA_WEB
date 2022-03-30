@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix("admin")->group(function() {
     Route::resource("/hak_akses", HakAksesController::class);
-    Route::get("/users", [UsersController::class, "index"]);
+    Route::resource("/users", UsersController::class);
 });
 
 Route::get('/', function () {

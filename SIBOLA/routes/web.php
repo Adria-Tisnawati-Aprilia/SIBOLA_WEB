@@ -52,3 +52,7 @@ Route::get("/hak_akses", function() {
 Route::get("/users", function() {
     return view("/admin/users/users");
 });
+
+Route::get("/lapangan", function() {
+    return view("/admin/lapangan/lapangan");
+});

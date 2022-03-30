@@ -75,17 +75,17 @@
                                         <input type="number" id="feedback4" class="form-control" placeholder="No Jadwal"
                                             name="no jadwal">
                                     </div>
-                                    div class="form-group">
+                                    <div class="form-group">
                                         <label for="feedback4" class="sr-only">Dp</label>
                                         <input type="number" id="feedback4" class="form-control" placeholder="Dp"
                                             name="dp">
                                     </div>
-                                    div class="form-group">
+                                    <div class="form-group">
                                         <label for="feedback4" class="sr-only">Status Dp</label>
                                         <input type="text" id="feedback4" class="form-control" placeholder="Status Dp"
                                             name="status dp">
                                     </div>
-                                    div class="form-group">
+                                    <div class="form-group">
                                         <label for="feedback4" class="sr-only">Bukti</label>
                                         <input type="text" id="feedback4" class="form-control" placeholder="Bukti"
                                             name="bukti">

@@ -41,9 +41,7 @@ Route::get("/login", function() {
     return view("/login/login");
 });
 
-Route::get("/arena", function() {
-    return view("/admin/arena/arena");
-});
+Route::get("/arena", [LandingPageController::class, "index"]);
 
 Route::get("/hak_akses", function() {
     return view("/admin/hak_akses/index");

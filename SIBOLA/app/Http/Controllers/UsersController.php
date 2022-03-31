@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\HakAkses;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -10,14 +11,20 @@ class UsersController extends Controller
     public function index()
     {
         $data = [
-            "data_role" => User::all()
+            "data_role" => HakAkses::all(),
+            "data_user" => User::all()
         ];
 
         return view("admin.users.users", $data);
     }
 
     public function store(Request $request){
-        User::create($request->all());
+        User::create([
+            "nama" => $request->nama,
+            "email" => $request->email,
+            "password" => bcrypt($request->password),
+            "id_hak_akses" => $request->id_hak_akses
+        ]);
 
         return redirect()->back();
     }

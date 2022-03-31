@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix("admin")->group(function() {
     Route::resource("/hak_akses", HakAksesController::class);
-    Route::resource("/users", UsersController::class);
+    Route::resource("/user", UsersController::class);
 });
 
 Route::prefix("owner")->group(function() {

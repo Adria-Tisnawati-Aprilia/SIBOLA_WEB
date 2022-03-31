@@ -14,14 +14,10 @@
             <div class="card-content">
                 <div class="card-body">
                     <h4 class="card-title">Tambah Users</h4>
-                    <form class="form" method="post">
+                    <form class="form" method="post" action="{{ url('/admin/user') }}">
+                        {{ csrf_field() }}
                         <div class="form-body">
                             <div class="card-content">
-                                <div class="form-group">
-                                    <label for="feedback1" class="sr-only">Id Users</label>
-                                    <input type="text" id="feedback1" class="form-control" placeholder="Id Users"
-                                    name="id users">
-                                </div>
                                 <div class="form-group">
                                     <label for="feedback4" class="sr-only">Nama</label>
                                     <input type="text" id="feedback4" class="form-control" placeholder="Nama"
@@ -38,9 +34,15 @@
                                     name="password">
                                 </div>
                                 <div class="form-group">
-                                    <label for="feedback4" class="sr-only">Id Hak Akses</label>
-                                    <input type="text" id="feedback4" class="form-control" placeholder="Id Hak Akses"
-                                    name="id hak akses">
+                                    <label for="feedback4" class="sr-only">Hak Akses</label>
+                                    <select name="id_hak_akses" id="id_hak_akses" class="form-control">
+                                        <option value="">- Pilih -</option>
+                                        @foreach ( $data_role as $role )
+                                            <option value="{{ $role->id }}">
+                                                {{ $role->nama }}
+                                            </option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="form-actions d-flex justify-content-end">
                                     <button type="submit" class="btn btn-primary me-1">Submit</button>
@@ -66,47 +68,23 @@
                             <th>No</th>
                             <th>Nama</th>
                             <th>Email</th>
-                            <th>Id Users</th>
+                            <th>Hak Akses</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         @php $no=0 @endphp
-                        @foreach($data_role as $data)
+                        @foreach($data_user as $data)
                         <tr>
                             <td>{{ ++$no }}.</td>
                             <td>{{ $data->nama }}</td>
+                            <td>{{ $data->email }}</td>
+                            <td>{{ $data->getHakAkses->nama }}</td>
                             <td>
                                 <a href="" class="btn btn-warning">
                                     Edit
                                 </a>
                                 <form method="post" action="{{ url('/admin/hak_akses/'.$data->id) }}" style="display:inline">
-                                    @method("delete")
-                                    {{ csrf_field() }}
-                                    <button type="submit" class="btn btn-danger">
-                                        Hapus
-                                    </button>
-                                </form>
-                            </td>
-                            <td>{{ $data->email }}</td>
-                            <td>
-                                <a href="" class="btn btn-warning">
-                                    Edit
-                                </a>
-                                <form method="post" action="{{ url('/admin/users/'.$data->id) }}" style="display:inline">
-                                    @method("delete")
-                                    {{ csrf_field() }}
-                                    <button type="submit" class="btn btn-danger">
-                                        Hapus
-                                    </button>
-                                </form>
-                            </td>
-                            <td>{{ $data->id_users }}</td>
-                            <td>
-                                <a href="" class="btn btn-warning">
-                                    Edit
-                                </a>
-                                <form method="post" action="{{ url('/admin/users/'.$data->id) }}" style="display:inline">
                                     @method("delete")
                                     {{ csrf_field() }}
                                     <button type="submit" class="btn btn-danger">

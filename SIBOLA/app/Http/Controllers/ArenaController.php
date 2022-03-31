@@ -10,7 +10,7 @@ class ArenaController extends Controller
     public function index()
     {
         $data = [
-            "data_role" => Arena::all()
+            "data_arena" => Arena::all()
         ];
 
         return view("owner.arena.arena", $data);

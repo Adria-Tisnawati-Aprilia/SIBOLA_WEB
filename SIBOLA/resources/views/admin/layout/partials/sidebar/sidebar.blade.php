@@ -29,7 +29,7 @@
                 </li>
 
                 <li class="sidebar-item ">
-                    <a href="{{ url('/admin/arena') }}" class='sidebar-link'>
+                    <a href="{{ url('/owner/arena') }}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Arena</span>
                     </a>

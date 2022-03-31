@@ -76,9 +76,9 @@ Route::get("/users", function() {
 });
 
 Route::get("/lapangan", function() {
-    return view("/admin/lapangan/lapangan");
+    return view("/owner/lapangan/lapangan");
 });
 
 Route::get("/booking", function() {
-    return view("/admin/booking/booking");
+    return view("/owner/booking/booking");
 });

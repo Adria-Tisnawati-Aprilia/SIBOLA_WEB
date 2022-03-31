@@ -37,7 +37,7 @@
                                 name="alas lapangan">
                             </div>
                             <div class="form-group">
-                                <label for="feedback4" class="sr-only">Fotot</label>
+                                <label for="feedback4" class="sr-only">Foto</label>
                                 <input type="text" id="feedback4" class="form-control" placeholder="Foto"
                                 name="foto">
                             </div>
@@ -63,24 +63,47 @@
     </div>
     <div class="col-md-8">
         <div class="card">
-            <div class="card-content">
-                <div class="card-body">
-                    <h4 class="card-title">Tambah Lapangan</h4>
-                    <form class="form" method="post">
-                        <div class="form-body">
-                            <div class="form-group">
-                                <label for="feedback1" class="sr-only">Id Hak Akses</label>
-                                <input type="text" id="feedback1" class="form-control" placeholder="Id Hak Akses"
-                                name="id hak akses">
-                            </div>
-                            <div class="form-group">
-                                <label for="feedback4" class="sr-only">Nama</label>
-                                <input type="text" id="feedback4" class="form-control" placeholder="Nama"
-                                name="nama">
-                            </div>
-                        </form>
-                    </div>
-                </div>
+            <div class="card-header">
+                Simple Datatable
+            </div>
+            <div class="card-body">
+                <table class="table table-striped" id="table1">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Kode Lapangan</th>
+                            <th>Nama Arena</th>
+                            <th>Alas Lapangan</th>
+                            <th>Foto</th>
+                            <th>Harga</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @php $no=0 @endphp
+                        @foreach($data_user as $data)
+                        <tr>
+                            <td>{{ ++$no }}.</td>
+                            <td>{{ $data->nama }}</td>
+                            <td>{{ $data->email }}</td>
+                            <td>{{ $data->getHakAkses->nama }}</td>
+                            <td>
+                                <a href="" class="btn btn-warning">
+                                    Edit
+                                </a>
+                                <form method="post" action="{{ url('/admin/hak_akses/'.$data->id) }}" style="display:inline">
+                                    @method("delete")
+                                    {{ csrf_field() }}
+                                    <button type="submit" class="btn btn-danger">
+                                        Hapus
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

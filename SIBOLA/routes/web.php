@@ -5,6 +5,7 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\HakAksesController;
 use App\Http\Controllers\LapanganController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,10 +19,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix("admin")->group(function() {
+Route::group(["middleware"=>"admin"], function() {
+    Route::prefix("admin")->group(function() {
     Route::resource("/hak_akses", HakAksesController::class);
     Route::resource("/user", UsersController::class);
+    Route::get('/logout', [LoginController::class, "logout"]);
+    });
 });
+
 
 Route::prefix("owner")->group(function() {
     Route::resource("/lapangan", LapanganController::class);
@@ -53,9 +58,9 @@ Route::get("/home", function() {
     return view("/admin/home");
 });
 
-Route::get("/login", function() {
-    return view("/login/login");
-});
+Route::get("/login", [LoginController::class, "index"])->middleware("guest");
+
+Route::post("/login", [LoginController::class, "post_login"]);
 
 Route::get("/arena", [ArenaController::class, "index"]);
 

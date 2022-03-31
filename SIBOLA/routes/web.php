@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\ArenaController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\HakAksesController;
+use App\Http\Controllers\LapanganController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,6 +21,12 @@ use Illuminate\Support\Facades\Route;
 Route::prefix("admin")->group(function() {
     Route::resource("/hak_akses", HakAksesController::class);
     Route::resource("/users", UsersController::class);
+});
+
+Route::prefix("owner")->group(function() {
+    Route::resource("/lapangan", LapanganController::class);
+    Route::resource("/arena", ArenaController::class);
+    Route::resource("/booking", BookingController::class);
 });
 
 Route::get('/', function () {

@@ -42,10 +42,6 @@
                                                 <label for="label-textarea"></label>
                                             </div>
                                         </div>
-                                        <div class="form-actions d-flex justify-content-end">
-                                            <button type="submit" class="btn btn-primary me-1">Submit</button>
-                                            <button type="reset" class="btn btn-light-primary">Cancel</button>
-                                        </div>
                                     </form>
                                 <div class="form-actions d-flex justify-content-end">
                                     <button type="submit" class="btn btn-primary me-1">Submit</button>
@@ -64,22 +60,70 @@
                 Simple Datatable
             </div>
             <div class="card-body">
-                <table class="table table-striped" id="table1">
-                    <thead>
-                        <tr>
-                            <th>Id Hak Akses</th>
-                            <th>Nama</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>AB 01</td>
-                            <td>Adria</td>
-                            <td>
-                                <span class="badge bg-success">Active</span>
-                            </td>
-                    </tbody>
-                </table>
+                <div class="card-header">
+                    Simple Datatable
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped" id="table1">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Kode Arena</th>
+                                <th>Id User</th>
+                                <th>Nama Arena</th>
+                                <th>Alamat</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @php $no=0 @endphp
+                            @foreach($data_role as $data)
+                            <tr>
+                                <td>{{ ++$no }}.</td>
+                                <td>{{ $data->kode_arena }}</td>
+                                <td>
+                                    <a href="" class="btn btn-warning">
+                                        Edit
+                                    </a>
+                                    <form method="post" action="{{ url('/owner/arena/'.$data->id) }}" style="display:inline">
+                                        @method("delete")
+                                        {{ csrf_field() }}
+                                        <button type="submit" class="btn btn-danger">
+                                            Hapus
+                                        </button>
+                                    </form>
+                                </td>
+                                <td>{{ $data->email }}</td>
+                                <td>
+                                    <a href="" class="btn btn-warning">
+                                        Edit
+                                    </a>
+                                    <form method="post" action="{{ url('/owner/arena/'.$data->id) }}" style="display:inline">
+                                        @method("delete")
+                                        {{ csrf_field() }}
+                                        <button type="submit" class="btn btn-danger">
+                                            Hapus
+                                        </button>
+                                    </form>
+                                </td>
+                                <td>{{ $data->id_users }}</td>
+                                <td>
+                                    <a href="" class="btn btn-warning">
+                                        Edit
+                                    </a>
+                                    <form method="post" action="{{ url('/owner/arena/'.$data->id) }}" style="display:inline">
+                                        @method("delete")
+                                        {{ csrf_field() }}
+                                        <button type="submit" class="btn btn-danger">
+                                            Hapus
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
             </div>
                 </div>
         </div>

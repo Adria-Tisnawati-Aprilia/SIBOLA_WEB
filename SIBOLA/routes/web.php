@@ -20,10 +20,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(["middleware"=>"admin"], function() {
-    Route::prefix("admin")->group(function() {
-        Route::resource("/hak_akses", HakAksesController::class);
-        Route::resource("/user", UsersController::class);
-        Route::get('/logout', [LoginController::class, "logout"]);
+    Route::group(["middleware" => ["can:admin"]], function() {
+
+        Route::prefix("admin")->group(function() {
+            Route::resource("/hak_akses", HakAksesController::class);
+            Route::resource("/user", UsersController::class);
+            Route::get('/logout', [LoginController::class, "logout"]);
+    });
     });
 });
 

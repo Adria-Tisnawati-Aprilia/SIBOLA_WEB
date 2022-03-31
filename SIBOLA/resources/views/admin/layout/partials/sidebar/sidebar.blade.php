@@ -42,12 +42,15 @@
                     </a>
                 </li>
 
+                @can("owner")
+
                 <li class="sidebar-item ">
                     <a href="{{ url('/admin/user') }}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Users</span>
                     </a>
                 </li>
+                @endcan
 
                 <li class="sidebar-item ">
                     <a href="{{ url('/owner/booking') }}" class='sidebar-link'>

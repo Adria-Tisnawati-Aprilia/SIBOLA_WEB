@@ -18,14 +18,14 @@ class UserSeeder extends Seeder
         User::create([
             "nama"=>"Admin",
             "email"=>"admin@gmail.com",
-            "password"=>"Password",
+            "password"=> bcrypt("Password"),
             "id_hak_akses"=>1
         ]);
 
         User::create([
             "nama"=>"User",
             "email"=>"user@gmail.com",
-            "password"=>"Password",
+            "password"=> bcrypt("Password"),
             "id_hak_akses"=>2
         ]);
     }

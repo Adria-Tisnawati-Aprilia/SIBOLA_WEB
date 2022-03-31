@@ -28,5 +28,9 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define("admin", function($user) {
             return $user->getHakAkses->nama == "Admin";
         });
+
+        Gate::define("owner", function($user) {
+            return $user->getHakAkses->nama == "Owner";
+        });
     }
 }

@@ -16,7 +16,8 @@
                     <h4 class="card-title">Tambah Arena</h4>
                     <form class="form" method="post">
                         <div class="form-body">
-                            <form class="form" method="post">
+                            <form class="form" method="post" action="{{ url('/owner/arena') }}">
+                                {{ csrf_field() }}
                                 <div class="form-body">
                                     <div class="form-group">
                                         <label for="feedback1" class="sr-only">Kode Arena</label>

@@ -36,7 +36,7 @@
                 </li>
 
                 <li class="sidebar-item ">
-                    <a href="{{ url('/admin/lapangan') }}" class='sidebar-link'>
+                    <a href="{{ url('/owner/lapangan') }}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Lapangan</span>
                     </a>
@@ -50,7 +50,7 @@
                 </li>
 
                 <li class="sidebar-item ">
-                    <a href="{{ url('/admin/booking') }}" class='sidebar-link'>
+                    <a href="{{ url('/owner/booking') }}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Booking</span>
                     </a>

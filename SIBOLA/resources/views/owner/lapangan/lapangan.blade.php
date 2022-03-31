@@ -38,7 +38,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="feedback4" class="sr-only">Foto</label>
-                                <input type="text" id="feedback4" class="form-control" placeholder="Foto"
+                                <input type="file" id="feedback4" class="form-control" placeholder="Foto"
                                 name="foto">
                             </div>
                             <div class="form-group">
@@ -82,17 +82,16 @@
                     </thead>
                     <tbody>
                         @php $no=0 @endphp
-                        @foreach($data_user as $data)
+                        @foreach($data_lapangan as $data)
                         <tr>
                             <td>{{ ++$no }}.</td>
                             <td>{{ $data->nama }}</td>
                             <td>{{ $data->email }}</td>
-                            <td>{{ $data->getHakAkses->nama }}</td>
                             <td>
                                 <a href="" class="btn btn-warning">
                                     Edit
                                 </a>
-                                <form method="post" action="{{ url('/admin/hak_akses/'.$data->id) }}" style="display:inline">
+                                <form method="post" action="{{ url('/owner/lapangan/'.$data->id) }}" style="display:inline">
                                     @method("delete")
                                     {{ csrf_field() }}
                                     <button type="submit" class="btn btn-danger">

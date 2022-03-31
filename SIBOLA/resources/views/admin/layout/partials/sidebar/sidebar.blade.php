@@ -20,14 +20,14 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
-
+                @can("admin")
                 <li class="sidebar-item ">
                     <a href="{{ url('/admin/hak_akses') }}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Hak Akses</span>
                     </a>
                 </li>
-
+                @endcan
                 <li class="sidebar-item ">
                     <a href="{{ url('/owner/arena') }}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
@@ -42,7 +42,7 @@
                     </a>
                 </li>
 
-                @can("owner")
+                @can("admin")
 
                 <li class="sidebar-item ">
                     <a href="{{ url('/admin/user') }}" class='sidebar-link'>

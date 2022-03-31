@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class LapanganController extends Controller
 {
-    /*{
+    public function index() {
         $data = [
             "data_lapangan" => Lapangan::all()
         ];
@@ -15,15 +15,15 @@ class LapanganController extends Controller
         return view("owner.lapangan.lapangan", $data);
     }
 
-    //public function store(Request $request){
-        Arena::create($request->all());
+    public function store(Request $request){
+        Lapangan::create($request->all());
 
         return redirect()->back();
     }
 
-    //public function destroy($id){
-        Arena::where("id", $id)->delete();
+    public function destroy($id){
+        Lapangan::where("id", $id)->delete();
 
         return redirect()->back();
-    }*/
+    }
 }

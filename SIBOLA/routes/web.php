@@ -33,6 +33,10 @@ Route::group(["middleware"=>"admin"], function() {
 
 Route::prefix("owner")->group(function() {
     Route::resource("/lapangan", LapanganController::class);
+
+    Route::get("/arena/edit_arena", [ArenaController::class, "edit_arena"]);
+    Route::put("/arena/simpan", [ArenaController::class, "simpan_arena"]);
+    Route::delete("/arena/{kode_arena}", [ArenaController::class, "destroy"]);
     Route::resource("/arena", ArenaController::class);
     Route::resource("/booking", BookingController::class);
 });

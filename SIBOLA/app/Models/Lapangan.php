@@ -9,7 +9,7 @@ class Lapangan extends Model
 {
     use HasFactory;
 
-    protected $table = "tb_lapangan";
+    protected $table = "lapangan";
 
     protected $guarded = [''];
 

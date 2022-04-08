@@ -13,7 +13,7 @@
         <div class="card">
             <div class="card-content">
                 <div class="card-body">
-                    <h4 class="card-title">Tambah Hak Akses</h4>
+                    <h4 class="card-title">Tambah Lapangan</h4>
                     <form class="form" method="post">
                         <div class="form-body">
                             <div class="form-group">

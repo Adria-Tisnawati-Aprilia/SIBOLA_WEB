@@ -53,6 +53,13 @@
                 @endcan
 
                 <li class="sidebar-item ">
+                    <a href="{{ url('/owner/event') }}" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Event</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item ">
                     <a href="{{ url('/owner/booking') }}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Booking</span>

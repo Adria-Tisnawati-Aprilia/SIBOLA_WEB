@@ -30,7 +30,9 @@ Route::group(["middleware"=>"admin"], function() {
             Route::get("/hak_akses/edit", [HakAksesController::class, "edit"]);
             Route::put("/hak_akses/simpan", [HakAksesController::class, "update"]);
             Route::resource("/hak_akses", HakAksesController::class);
-            Route::resource("/user", UsersController::class);
+
+            Route::get("/users/edit", [UsersController::class, "edit"]);
+            Route::resource("/users", UsersController::class);
             Route::get('/logout', [LoginController::class, "logout"]);
     });
     });

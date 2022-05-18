@@ -35,7 +35,7 @@
 
             <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
-            <li><a href="{{ url('/admin/home') }}"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
+            <li><a href="{{ url('/admin/home') }}"><i class="fa fa-circle-o text-red"></i> <span>Dashboard</span></a></li>
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-share"></i> <span>Data Master</span>
@@ -44,17 +44,8 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Arena </a></li>
-                    <li class="treeview">
-                        <a href="#"><i class="fa fa-circle-o"></i> Lapangan
-                            <span class="pull-right-container">
-                                <i></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                        </ul>
-                    </li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+                    <li><a href="{{url('/owner/arena/')}}"><i class="fa fa-circle-o"></i> Arena </a></li>
+                    <li><a href="{{url('/owner/lapangan')}}"><i class="fa fa-circle-o"></i> Lapangan</a></li>
                 </ul>
             </li>
             <li class="treeview">
@@ -66,16 +57,7 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="{{url('/admin/hak_akses')}}"><i class="fa fa-circle-o"></i> Role </a></li>
-                    <li class="treeview">
-                        <a href=""><i class="fa fa-circle-o"></i> Users
-                            <span class="pull-right-container">
-                                <i></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                        </ul>
-                    </li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+                    <li><a href="{{url('/admin/users')}}"><i class="fa fa-circle-o"></i> Users </a></li>
                 </ul>
             </li>
             <li class="treeview">

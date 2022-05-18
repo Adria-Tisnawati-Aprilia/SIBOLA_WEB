@@ -29,6 +29,15 @@ class UsersController extends Controller
         return redirect()->back();
     }
 
+    public function edit(Request $request)
+    {
+        $data = [
+            "edit" => User::where("id", $request->id)->first()
+        ];
+
+        return view("admin.users.edit", $data);
+    }
+
     public function destroy($id){
         User::where("id", $id)->delete();
 

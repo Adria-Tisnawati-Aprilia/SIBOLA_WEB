@@ -8,7 +8,6 @@
 @endsection
 
 @section("konten")
-
 <section class="content-header">
     <h1>
         Role
@@ -39,7 +38,7 @@
                     </div>
                     <div class="box-footer">
                         <button type="reset" class="btn btn-danger btn-sm">
-                            <i class="fa fa-times"></i> Kembali
+                            <i class="fa fa-times"></i> Batal
                         </button>
                         <button type="submit" class="btn btn-primary btn-sm">
                             <i class="fa fa-plus"></i> Tambah
@@ -102,7 +101,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title">Default Modal</h4>
+                <h4 class="modal-title"> Edit Data </h4>
             </div>
             <form action="{{ url('/admin/hak_akses/simpan') }}" method="POST">
                 @method("PUT")

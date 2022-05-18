@@ -27,6 +27,8 @@ Route::group(["middleware"=>"admin"], function() {
     Route::group(["middleware" => ["can:admin"]], function() {
 
         Route::prefix("admin")->group(function() {
+            Route::get("/hak_akses/edit", [HakAksesController::class, "edit"]);
+            Route::put("/hak_akses/simpan", [HakAksesController::class, "update"]);
             Route::resource("/hak_akses", HakAksesController::class);
             Route::resource("/user", UsersController::class);
             Route::get('/logout', [LoginController::class, "logout"]);
@@ -49,12 +51,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin', function () {
-    return view("/admin/layout/baground");
-});
-
 Route::get("/home", function() {
     return view("/admin/home");
+});
+
+Route::get('/admin', function () {
+    return view("/admin/layout/baground");
 });
 
 Route::get("/home", function() {

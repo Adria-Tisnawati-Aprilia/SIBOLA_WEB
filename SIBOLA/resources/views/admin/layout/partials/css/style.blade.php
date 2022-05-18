@@ -5,8 +5,7 @@
     <link rel="stylesheet" href="{{ url('/theme') }}/bower_components/Ionicons/css/ionicons.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ url('/theme') }}/dist/css/AdminLTE.min.css">
-    <!-- AdminLTE Skins. Choose a skin from the css/skins
-        folder instead of downloading all of them to reduce the load. -->
+
         <link rel="stylesheet" href="{{ url('/theme') }}/dist/css/skins/_all-skins.min.css">
         <!-- Morris chart -->
         <link rel="stylesheet" href="{{ url('/theme') }}/bower_components/morris.js/morris.css">
@@ -18,3 +17,4 @@
         <link rel="stylesheet" href="{{ url('/theme') }}/bower_components/bootstrap-daterangepicker/daterangepicker.css">
         <!-- bootstrap wysihtml5 - text editor -->
         <link rel="stylesheet" href="{{ url('/theme') }}/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+        <link rel="stylesheet" href="{{ url('/theme') }}/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">

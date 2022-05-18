@@ -9,7 +9,7 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
     @include("admin.layout.partials.css.style")
-    
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -23,17 +23,17 @@
             @yield("konten")
         </div>
 
+            @include("admin.layout.partials.footer.foot")
+
+            <div class="control-sidebar-bg"></div>
     </div>
 
 
-    @include("admin.layout.partials.footer.foot")
-
-    <div class="control-sidebar-bg"></div>
-
-</div>
 
 
 @include("admin.layout.partials.js.style")
+
+@yield("script_js")
 
 </body>
 </html>

@@ -19,6 +19,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/coba', function(){
+    return view("admin.layout.baground");
+});
+
 Route::group(["middleware"=>"admin"], function() {
     Route::group(["middleware" => ["can:admin"]], function() {
 

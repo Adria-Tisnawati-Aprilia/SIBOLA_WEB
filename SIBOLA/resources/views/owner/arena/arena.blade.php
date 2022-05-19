@@ -47,7 +47,7 @@
                                 <td>{{ $data->nama_arena }}</td>
                                 <td>{{ $data->alamat }}</td>
                                 <td>
-                                    <button onclick="editUsers({{ $data->id }})" type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modal-default">
+                                    <button onclick="editArena('{{ $data->kode_arena }}')" type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modal-default">
                                         <i class="fa fa-edit"></i> Edit
                                     </button>
                                     <form method="post" action="{{ url('/admin/users/'.$data->id) }}" style="display:inline">

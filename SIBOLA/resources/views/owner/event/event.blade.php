@@ -8,17 +8,28 @@
 @endsection
 
 @section("konten")
-<div class="row">
-    <div class>
-        <div class="card">
-            <div class="card-header">
-                <button type="button" class="btn btn-outline-primary block" data-bs-toggle="modal" data-bs-target="#default">
-                    Tambah Data
-                </button>
-            </div>
-            <div class="card-body">
-                <table class="table table-striped" id="table1">
-                    <thead>
+<section class="content-header">
+    <h1>
+        Event
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Event </a></li>
+        <li class="active">Arena</li>
+    </ol>
+</section>
+
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-tambah">
+                        <i class="fa fa-edit"></i> Tambah
+                    </button>
+                </div>
+                <div class="box-body">
+                    <table class="table table-striped" id="example1">
+                        <thead>
                         <tr>
                             <th>Nama</th>
                             <th>Email</th>
@@ -29,7 +40,7 @@
                     </thead>
                     <tbody>
                         @php $no=0 @endphp
-                        @foreach($data_arena as $data)
+                        @foreach($data_event as $data)
                         <tr>
                             <td>{{ ++$no }}.</td>
                             <td>{{ $data->getIdUser->nama }}</td>
@@ -37,10 +48,10 @@
                             <td>{{ $data->no_hp }}</td>
                             <td>{{ $data->alamat }}</td>
                             <td>
-                                <button onclick="editArena({{ $data->kode_arena }})" type="button" class="btn btn-warning block" data-bs-toggle="modal" data-bs-target="#default-edit">
-                                    Edit
+                                <button onclick="editEvent('{{ $data->kode_arena }}')" type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modal-default">
+                                    <i class="fa fa-edit"></i> Edit
                                 </button>
-                                <form method="post" action="{{ url('/owner/arena/'.$data->kode_arena) }}" style="display:inline">
+                                <form method="post" action="{{ url('/admin/users/'.$data->id) }}" style="display:inline">
                                     @method("delete")
                                     {{ csrf_field() }}
                                     <button type="submit" class="btn btn-danger">
@@ -56,6 +67,7 @@
         </div>
     </div>
 </div>
+</section>
 
 <!-- Tambah Data -->
 <div class="modal fade text-left" id="default" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">

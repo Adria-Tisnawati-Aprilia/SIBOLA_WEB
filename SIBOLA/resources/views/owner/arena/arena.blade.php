@@ -149,7 +149,7 @@
 
 @endsection
 
-@section("scripts")
+@section("scripts_js")
 
 <script type="text/javascript">
     function editArena(kode_arena) {

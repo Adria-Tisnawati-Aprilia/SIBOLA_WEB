@@ -149,7 +149,7 @@
 
 @endsection
 
-@section("scripts_js")
+@section("script_js")
 
 <script type="text/javascript">
     function editArena(kode_arena) {
@@ -158,7 +158,7 @@
             type : "GET",
             data : { kode_arena : kode_arena },
             success : function(data) {
-                $("#konten").html(data);
+                $("#modal-content-edit").html(data);
                 return true;
             }
         });

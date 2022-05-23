@@ -32,7 +32,7 @@
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="">
-                                <a href="{{ url('/admin/logout') }}" class="btn btn-danger btn-flat btn-block">
+                                <a href="{{ url('/logout') }}" class="btn btn-danger btn-flat btn-block">
                                     <i class="fa fa-sign-out"></i> Logout
                                 </a>
                             </div>

@@ -18,9 +18,9 @@ return new class extends Migration
             $table->string("kode_arena");
             $table->string("nama_lapangan");
             $table->string("alas_lapangan");
-            $table->string("foto");
+            $table->string("foto")->nullable();
             $table->double("harga");
-            $table->string("status");
+            $table->enum("status", ["1", "0"])->default(1);
         });
     }
 

@@ -33,13 +33,15 @@ Route::group(["middleware"=>"admin"], function() {
 
             Route::get("/users/edit", [UsersController::class, "edit"]);
             Route::resource("/users", UsersController::class);
-            Route::get('/logout', [LoginController::class, "logout"]);
     });
     });
 });
 
 
 Route::prefix("owner")->group(function() {
+    Route::get("/lapangan/edit_lapangan", [LapanganController::class, "edit_lapangan"]);
+    Route::put("/lapangan/simpan", [LapanganController::class, "simpan_lapangan"]);
+    Route::delete("/lapangan/{kode_lapangan}", [LapanganController::class, "destroy"]);
     Route::resource("/lapangan", LapanganController::class);
 
     Route::get("/arena/edit_arena", [ArenaController::class, "edit_arena"]);
@@ -48,6 +50,8 @@ Route::prefix("owner")->group(function() {
     Route::resource("/arena", ArenaController::class);
     Route::resource("/booking", BookingController::class);
 });
+
+Route::get('/logout', [LoginController::class, "logout"]);
 
 Route::get('/', function () {
     return view('welcome');

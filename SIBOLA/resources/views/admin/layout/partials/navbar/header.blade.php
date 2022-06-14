@@ -1,4 +1,3 @@
-
 <header class="main-header">
     <a href="{{ url('/page/admin/dashboard') }}" class="logo">
         <span class="logo-mini"><b>Sibola</b></span>
@@ -18,7 +17,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 
                         <img src="{{ url('gambar/gambar_user.png') }}" class="user-image" alt="User Image">
-                        <span class="hidden-xs">Adriaa</span>
+                        <span class="hidden-xs">{{ Auth::user()->nama }}</span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->

@@ -13,17 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('booking', function (Blueprint $table) {
+        Schema::create('laporan', function (Blueprint $table) {
             $table->string("kode_booking")->primary();
-            $table->date("tgl_booking");
-            $table->date("tgl_main");
+            $table->string("nama");
             $table->string("nama_arena");
-            $table->string("kode_lapangan");
-            $table->integer("id_users");
-            $table->integer("no_jadwal");
-            $table->double("dp");
-            $table->string("status_dp");
-            $table->string("bukti");
+            $table->date("tgl_main");
+            $table->double("harga");
+            $table->string("status");
         });
     }
 
@@ -34,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('booking');
+        Schema::dropIfExists('laporan');
     }
 };

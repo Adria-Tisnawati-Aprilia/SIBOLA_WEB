@@ -23,10 +23,17 @@ class UserSeeder extends Seeder
         ]);
 
         User::create([
+            "nama"=>"Owner",
+            "email"=>"owner@gmail.com",
+            "password"=> bcrypt("Password"),
+            "id_hak_akses"=>2
+        ]);
+
+        User::create([
             "nama"=>"User",
             "email"=>"user@gmail.com",
             "password"=> bcrypt("Password"),
-            "id_hak_akses"=>2
+            "id_hak_akses"=>3
         ]);
     }
 }

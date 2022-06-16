@@ -19,6 +19,10 @@ class RoleSeeder extends Seeder
         ]);
 
         HakAkses::create([
+            "nama"=>"Owner"
+        ]);
+
+        HakAkses::create([
             "nama"=>"User"
         ]);
     }

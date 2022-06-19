@@ -12,4 +12,9 @@ class Owner extends Model
     protected $table = "owner";
 
     protected $guarded = [''];
+
+    public function getUsers()
+    {
+        return $this->belongsTo("App\Models\User", "id_users", "id");
+    }
 }

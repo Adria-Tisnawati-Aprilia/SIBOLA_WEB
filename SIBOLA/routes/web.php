@@ -35,9 +35,9 @@ Route::group(["middleware" => "admin"], function () {
             Route::get("/hak_akses/edit", [HakAksesController::class, "edit"]);
             Route::put("/hak_akses/simpan", [HakAksesController::class, "update"]);
             Route::resource("/hak_akses", HakAksesController::class);
-            Route::resource("/owner", OwnerController::class);
             Route::get("/owner/edit", [OwnerController::class, "edit"]);
             Route::put("/owner/simpan", [OwnerController::class, "update"]);
+            Route::resource("/owner", OwnerController::class);
             Route::get("/users/edit", [UsersController::class, "edit"]);
             Route::resource("/users", UsersController::class);
         });

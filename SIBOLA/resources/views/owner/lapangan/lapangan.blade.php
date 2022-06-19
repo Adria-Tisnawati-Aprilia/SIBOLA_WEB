@@ -35,10 +35,7 @@
                                 <th>Kode Lapangan</th>
                                 <th>Kode Arena</th>
                                 <th>Nama Lapangan</th>
-                                <th>Alas Lapangan</th>
-
                                 <th>Harga</th>
-
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -50,7 +47,6 @@
                                 <td>{{ $data->kode_lapangan }}</td>
                                 <td>{{ $data->kode_arena }}</td>
                                 <td>{{ $data->nama_lapangan }}</td>
-                                <td>{{ $data->alas_lapangan }}</td>
                                 <td>{{ $data->harga }}</td>
                                 <td class="text-center">
                                     <button onclick="editLapangan('{{ $data->kode_lapangan }}')" type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modal-default">
@@ -116,14 +112,29 @@
                         name="alas_lapangan">
                     </div>
                     <div class="form-group">
-                        <label for="foto" class="sr-only">Foto</label>
-                        <input type="file" id="foto" class="form-control" placeholder="Foto"
-                        name="foto">
+                        <label for="id_jenis_lapangan" class="sr-only">Id Jenis Lapangan</label>
+                        <input type="text" id="id_jenis_lapangan" class="form-control" placeholder="Id Jenis Lapangan"
+                        name="id_jenis_lapangan">
+                    </div>
+                    <div class="form-group">
+                        <label for="ukuran" class="sr-only">Ukuran</label>
+                        <input type="text" id="ukuran" class="form-control" placeholder="ukuran"
+                        name="ukuran">
                     </div>
                     <div class="form-group">
                         <label for="harga" class="sr-only">Harga</label>
                         <input type="double" id="harga" class="form-control" placeholder="Harga"
                         name="harga">
+                    </div>
+                    <div class="form-group">
+                        <label for="status" class="sr-only">Status</label>
+                        <input type="text" id="status" class="form-control" placeholder="Status"
+                        name="status">
+                    </div>
+                    <div class="form-group">
+                        <label for="id_kategori_lapangan" class="sr-only">Id Kategori Lapangan</label>
+                        <input type="text" id="id_kategori_lapangan" class="form-control" placeholder="Id Kategori Lapangan"
+                        name="id_kategori_lapangan">
                     </div>
                 </div>
                 <div class="modal-footer">

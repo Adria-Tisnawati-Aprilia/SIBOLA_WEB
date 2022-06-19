@@ -22,10 +22,6 @@
     <input type="text" name="alas_lapangan" id="alas_lapangan" class="form-control" placeholder="Masukkan Alas Lapangan" value="{{ $edit_lapangan->alas_lapangan }}">
 </div>
 <div class="form-group">
-    <label for="foto"> Foto </label>
-    <input type="text" name="foto" id="foto" class="form-control" placeholder="Masukkan Foto" value="{{ $edit_lapangan->foto }}">
-</div>
-<div class="form-group">
     <label for="harga"> Harga </label>
     <input type="harga" name="harga" id="harga" class="form-control" placeholder="Masukkan Harga" value="{{ $edit_lapangan->harga }}">
 </div>

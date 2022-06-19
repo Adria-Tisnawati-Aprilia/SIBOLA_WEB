@@ -32,9 +32,12 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Id User</th>
+                                <th>Id Owner</th>
                                 <th>Nama Arena</th>
+                                <th>No Hp</th>
                                 <th>Alamat</th>
+                                <th>Deskripsi</th>
+                                <th>Foto</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -43,9 +46,13 @@
                             @foreach($data_arena as $data)
                             <tr>
                                 <td>{{ ++$no }}.</td>
-                                <td>{{ $data->getIdUser->nama }}</td>
+                                <td>{{ $data->kode_arena }}</td>
                                 <td>{{ $data->nama_arena }}</td>
+                                <td>{{ $data->id_owner }}</td>
+                                <td>{{ $data->no_hp }}</td>
                                 <td>{{ $data->alamat }}</td>
+                                <td>{{ $data->deskripsi }}</td>
+                                <td>{{ $data->foto }}</td>
                                 <td>
                                     <button onclick="editArena('{{ $data->kode_arena }}')" type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modal-default">
                                         <i class="fa fa-edit"></i> Edit
@@ -94,6 +101,16 @@
                         name="nama_arena">
                     </div>
                     <div class="form-group">
+                        <label for="id_owner" class="sr-only">Id Owner</label>
+                        <input type="text" id="id_owner" class="form-control" placeholder="Id Owner"
+                        name="id_owner">
+                    </div>
+                    <div class="form-group">
+                        <label for="no_hp" class="sr-only">No Hp</label>
+                        <input type="text" id="no_hp" class="form-control" placeholder="No Hp"
+                        name="no_hp">
+                    </div>
+                    <div class="form-group">
                         <label for="alamat" class="sr-only">Alamat</label>
 
                         <div class="form-group form-label-group">
@@ -101,6 +118,16 @@
                             placeholder="Alamat" name="alamat"></textarea>
                             <label for="label-textarea"></label>
                         </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="deskripsi" class="sr-only">Deskripsi</label>
+                        <input type="text" id="deskripsi" class="form-control" placeholder="Deskripsi"
+                        name="deskripsi">
+                    </div>
+                    <div class="form-group">
+                        <label for="foto" class="sr-only">Foto</label>
+                        <input type="file" id="foto" class="form-control" placeholder="Foto"
+                        name="foto">
                     </div>
                 </div>
                 <div class="modal-footer">

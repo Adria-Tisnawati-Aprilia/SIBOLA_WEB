@@ -4,6 +4,8 @@ use App\Http\Controllers\AppController;
 use App\Http\Controllers\ArenaController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\HakAksesController;
+use App\Http\Controllers\JenisLapanganController;
+use App\Http\Controllers\KategoriLapanganController;
 use App\Http\Controllers\LapanganController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\LoginController;
@@ -29,9 +31,6 @@ Route::group(["middleware" => "admin"], function () {
     Route::group(["middleware" => ["can:admin"]], function () {
 
         Route::prefix("admin")->group(function () {
-            Route::get("/", [AppController::class, "index"]);
-            Route::get("/home", [AppController::class, "home"]);
-
             Route::get("/hak_akses/edit", [HakAksesController::class, "edit"]);
             Route::put("/hak_akses/simpan", [HakAksesController::class, "update"]);
             Route::resource("/hak_akses", HakAksesController::class);
@@ -42,20 +41,35 @@ Route::group(["middleware" => "admin"], function () {
             Route::resource("/users", UsersController::class);
         });
     });
-});
 
+    Route::prefix("owner")->group(function () {
 
-Route::prefix("owner")->group(function () {
-    Route::get("/lapangan/edit_lapangan", [LapanganController::class, "edit_lapangan"]);
-    Route::put("/lapangan/simpan", [LapanganController::class, "simpan_lapangan"]);
-    Route::delete("/lapangan/{kode_lapangan}", [LapanganController::class, "destroy"]);
-    Route::resource("/lapangan", LapanganController::class);
+        // Data Kategori Lapangan
+        Route::get("/kategori_lapangan/edit", [KategoriLapanganController::class, "edit"]);
+        Route::put("/kategori_lapangan/simpan", [KategoriLapanganController::class, "update"]);
+        Route::resource("/kategori_lapangan", KategoriLapanganController::class);
 
-    Route::get("/arena/edit_arena", [ArenaController::class, "edit_arena"]);
-    Route::put("/arena/simpan", [ArenaController::class, "simpan_arena"]);
-    Route::delete("/arena/{kode_arena}", [ArenaController::class, "destroy"]);
-    Route::resource("/arena", ArenaController::class);
-    Route::resource("/booking", BookingController::class);
+        // Data Jenis Lapangan
+        Route::get("/jenis_lapangan/edit", [JenisLapanganController::class, "edit"]);
+        Route::put("/jenis_lapangan/simpan", [JenisLapanganController::class, "update"]);
+        Route::resource("/jenis_lapangan", JenisLapanganController::class);
+
+        Route::get("/lapangan/edit_lapangan", [LapanganController::class, "edit_lapangan"]);
+        Route::put("/lapangan/simpan", [LapanganController::class, "simpan_lapangan"]);
+        Route::delete("/lapangan/{kode_lapangan}", [LapanganController::class, "destroy"]);
+        Route::resource("/lapangan", LapanganController::class);
+
+        Route::get("/arena/edit_arena", [ArenaController::class, "edit_arena"]);
+        Route::put("/arena/simpan", [ArenaController::class, "simpan_arena"]);
+        Route::delete("/arena/{kode_arena}", [ArenaController::class, "destroy"]);
+        Route::resource("/arena", ArenaController::class);
+        Route::resource("/booking", BookingController::class);
+    });
+
+    Route::prefix("admin")->group(function () {
+        Route::get("/", [AppController::class, "index"]);
+        Route::get("/home", [AppController::class, "home"]);
+    });
 });
 
 Route::get('/logout', [LoginController::class, "logout"]);

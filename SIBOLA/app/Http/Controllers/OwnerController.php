@@ -11,7 +11,7 @@ class OwnerController extends Controller
         $data = [
             "data_owner" => Owner::all()
         ];
-        return view("Owner");
+        return view("admin.owner.owner", $data);
     }
     public function store(Request $request){
         Owner::create([

@@ -14,11 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('owner', function (Blueprint $table) {
-            $table->integer(id);
+            $table->id();
+            $table->integer("id_users");
             $table->date("tanggal_bergabung");
-            $table->integer(status, ["1", "0"])->default(1);
+            $table->enum("status", ["1", "0"])->default(1);
             $table->text("alamat_owner");
-            $table->string("logo_owner");
+            $table->string("logo_owner")->nullable();
             $table->timestamps();
         });
     }

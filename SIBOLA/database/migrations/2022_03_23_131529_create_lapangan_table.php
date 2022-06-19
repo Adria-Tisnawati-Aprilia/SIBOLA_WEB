@@ -17,12 +17,12 @@ return new class extends Migration
             $table->string("kode_lapangan")->primary();
             $table->string("kode_arena");
             $table->string("nama_lapangan");
-            $table->integer(id_jenis_lapangan);
+            $table->integer("id_jenis_lapangan");
             //$table->string("ukuran");
             $table->string("foto")->nullable();
             $table->double("harga");
             $table->enum("status", ["1", "0"])->default(1);
-            $table->integer(id_kategori_lapangan);
+            $table->integer("id_kategori_lapangan");
         });
     }
 

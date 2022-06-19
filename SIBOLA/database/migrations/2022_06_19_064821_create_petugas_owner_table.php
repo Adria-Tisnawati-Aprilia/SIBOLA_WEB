@@ -14,9 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('petugas_owner', function (Blueprint $table) {
-            $table->integer(id)->primary();
-            $table->integer(id_owner);
-            $table->integer(status, ["1", "0"])->default(1);
+            $table->id();
+            $table->integer("id_owner");
+            $table->enum("status", ["1", "0"])->default(1);
             $table->timestamps();
         });
     }

@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('pembayaran', function (Blueprint $table) {
             $table->id();
-            $table->integer(id_booking);
-            $table->integer(id_users_booking);
+            $table->integer("id_booking");
+            $table->integer("id_users_booking");
             $table->string('bukti_pembayaran');
         });
     }

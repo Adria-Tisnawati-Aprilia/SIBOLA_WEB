@@ -34,7 +34,9 @@
                                 <th>No</th>
                                 <th>Nama</th>
                                 <th>Email</th>
-                                <th>Hak Akses</th>
+                                <th>No Hp</th>
+                                <th>Foto</th>
+                                <th>Alamat</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -45,6 +47,9 @@
                                 <td>{{ ++$no }}.</td>
                                 <td>{{ $data->nama }}</td>
                                 <td>{{ $data->email }}</td>
+                                <td>{{ $data->no_hp }}</td>
+                                <td>{{ $data->foto }}</td>
+                                <td>{{ $data->alamat }}</td>
                                 <td>{{ $data->getHakAkses->nama }}</td>
                                 <td>
                                     <button onclick="editUsers({{ $data->id }})" type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modal-default">
@@ -89,6 +94,18 @@
                     </div>
                     <div class="form-group">
                         <label for="email"> Email </label>
+                        <input type="text" name="email" id="email" class="form-control" placeholder="Masukkan Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="nama"> No Hp </label>
+                        <input type="text" name="nama" id="nama" class="form-control" placeholder="Masukkan Nama">
+                    </div>
+                    <div class="form-group">
+                        <label for="email"> Foto </label>
+                        <input type="text" name="email" id="email" class="form-control" placeholder="Masukkan Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="email"> Alamat </label>
                         <input type="text" name="email" id="email" class="form-control" placeholder="Masukkan Email">
                     </div>
                     <div class="form-group">

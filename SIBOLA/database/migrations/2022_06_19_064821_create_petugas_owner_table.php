@@ -13,14 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('arena', function (Blueprint $table) {
-            $table->string("kode_arena")->primary();
-            $table->string("nama_arena");
-            $table->integer("id_owner");
-            $table->integer("no_hp");
-            $table->text("alamat");
-            $table->text("deskripsi");
-            $table->string("foto")->nullable();
+        Schema::create('petugas_owner', function (Blueprint $table) {
+            $table->integer(id)->primary();
+            $table->integer(id_owner);
+            $table->integer(status, ["1", "0"])->default(1);
+            $table->timestamps();
         });
     }
 
@@ -31,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('arena');
+        Schema::dropIfExists('petugas_owner');
     }
 };

@@ -36,7 +36,7 @@
                                 <th>Kode Arena</th>
                                 <th>Nama Lapangan</th>
                                 <th>Alas Lapangan</th>
-                                
+
                                 <th>Harga</th>
 
                                 <th>Aksi</th>
@@ -56,7 +56,7 @@
                                     <button onclick="editLapangan('{{ $data->kode_lapangan }}')" type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modal-default">
                                         <i class="fa fa-edit"></i> Edit
                                     </button>
-                                    <form method="post" action="{{ url('/admin/users/'.$data->id) }}" style="display:inline">
+                                    <form method="post" action="{{ url('/owner/lapangan/'.$data->kode_lapangan) }}" style="display:inline">
                                         @method("delete")
                                         {{ csrf_field() }}
                                         <button type="submit" class="btn btn-danger">

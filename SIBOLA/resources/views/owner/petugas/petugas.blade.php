@@ -10,11 +10,11 @@
 @section("konten")
 <section class="content-header">
     <h1>
-        Arena
+        Users
     </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Arena</li>
+        <li class="active">Users</li>
     </ol>
 </section>
 
@@ -32,25 +32,25 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Id User</th>
-                                <th>Nama Arena</th>
-                                <th>Alamat</th>
+                                <th>Id</th>
+                                <th>Email</th>
+                                <th>Hak Akses</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                             @php $no=0 @endphp
-                            @foreach($data_arena as $data)
+                            @foreach($data_user as $data)
                             <tr>
                                 <td>{{ ++$no }}.</td>
-                                <td>{{ $data->getIdUser->nama }}</td>
-                                <td>{{ $data->nama_arena }}</td>
-                                <td>{{ $data->alamat }}</td>
+                                <td>{{ $data->nama }}</td>
+                                <td>{{ $data->email }}</td>
+                                <td>{{ $data->getHakAkses->nama }}</td>
                                 <td>
-                                    <button onclick="editArena('{{ $data->kode_arena }}')" type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modal-default">
+                                    <button onclick="editUsers({{ $data->id }})" type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modal-default">
                                         <i class="fa fa-edit"></i> Edit
                                     </button>
-                                    <form method="post" action="{{ url('/owner/arena/'.$data->kode_arena) }}" style="display:inline">
+                                    <form method="post" action="{{ url('/admin/users/'.$data->id) }}" style="display:inline">
                                         @method("delete")
                                         {{ csrf_field() }}
                                         <button type="submit" class="btn btn-danger">
@@ -68,7 +68,7 @@
     </div>
 </section>
 
-<!-- Tambah Data -->
+<!-- Edit Data -->
 <div class="modal fade" id="modal-tambah">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -80,27 +80,20 @@
                     <i class="fa fa-plus"></i> Tambah Data
                 </h4>
             </div>
-            <form action="{{ url('/owner/arena') }}" method="POST">
+            <form action="{{ url('/admin/users') }}" method="POST">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="kode_arena" class="sr-only">Kode Arena</label>
-                        <input type="text" id="kode_arena" class="form-control" placeholder="Kode Arena"
-                        name="kode_arena">
+                        <label for="nama"> Nama </label>
+                        <input type="text" name="nama" id="nama" class="form-control" placeholder="Masukkan Nama">
                     </div>
                     <div class="form-group">
-                        <label for="nama_arena" class="sr-only">Nama Arena</label>
-                        <input type="text" id="nama_arena" class="form-control" placeholder="Nama Arena"
-                        name="nama_arena">
+                        <label for="email"> Email </label>
+                        <input type="text" name="email" id="email" class="form-control" placeholder="Masukkan Email">
                     </div>
                     <div class="form-group">
-                        <label for="alamat" class="sr-only">Alamat</label>
-
-                        <div class="form-group form-label-group">
-                            <textarea class="form-control" id="alamat" rows="3"
-                            placeholder="Alamat" name="alamat"></textarea>
-                            <label for="label-textarea"></label>
-                        </div>
+                        <label for="hak_akses"> Hak Akses </label>
+                        <input type="text" name="hak_akses" id="hak_akses" class="form-control" placeholder="Masukkan Hak Akses">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -115,7 +108,7 @@
         </div>
     </div>
 </div>
-<!-- End -->
+<!-- END -->
 
 <!-- Edit Data -->
 <div class="modal fade" id="modal-default">
@@ -127,7 +120,7 @@
                 </button>
                 <h4 class="modal-title">Edit Data</h4>
             </div>
-            <form action="{{ url('/owner/arena/simpan') }}" method="POST">
+            <form action="{{ url('/admin/hak_akses/simpan') }}" method="POST">
                 @method("PUT")
                 @csrf
                 <div class="modal-body" id="modal-content-edit">
@@ -145,18 +138,18 @@
         </div>
     </div>
 </div>
-<!-- End -->
+<!-- END -->
 
 @endsection
 
 @section("script_js")
 
-<script type="text/javascript">
-    function editArena(kode_arena) {
+<script>
+    function editUsers(id) {
         $.ajax({
-            url : "{{ url('/owner/arena/edit_arena') }}",
+            url : "{{ url('/admin/users/edit') }}",
             type : "GET",
-            data : { kode_arena : kode_arena },
+            data : { id : id },
             success : function(data) {
                 $("#modal-content-edit").html(data);
                 return true;
@@ -164,4 +157,5 @@
         });
     }
 </script>
+
 @endsection

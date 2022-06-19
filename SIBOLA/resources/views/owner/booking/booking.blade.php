@@ -17,53 +17,53 @@
                     <form class="form" method="post">
                         <div class="form-body">
                             <div class="form-group">
-                                <label for="feedback1" class="sr-only">Kode Booking</label>
-                                <input type="text" id="feedback1" class="form-control" placeholder="Kode Booking"
-                                    name="kode booking">
+                                <label for="kode_booking" class="sr-only">Kode Booking</label>
+                                <input type="text" id="kode_booking" class="form-control" placeholder="Kode Booking"
+                                    name="kode_booking">
                             </div>
                             <div class="form-group">
-                                <label for="feedback4" class="sr-only">Tanggal Booking</label>
-                                <input type="date" id="feedback4" class="form-control" placeholder="Tanggal Booking"
-                                    name="tanggal booking">
+                                <label for="tanggal_booking" class="sr-only">Tanggal Booking</label>
+                                <input type="date" id="tanggal_booking" class="form-control" placeholder="Tanggal Booking"
+                                    name="tanggal_booking">
                             </div>
                             <div class="form-group">
-                                <label for="feedback4" class="sr-only">Tanggal Main</label>
-                                <input type="date" id="feedback4" class="form-control" placeholder="Tanggal Main"
-                                    name="tanggal main">
+                                <label for="tanggal_main" class="sr-only">Tanggal Main</label>
+                                <input type="date" id="tanggal_main" class="form-control" placeholder="Tanggal Main"
+                                    name="tanggal_main">
                             </div>
                             <div class="form-group">
-                                <label for="feedback4" class="sr-only">Nama Arena</label>
-                                <input type="text" id="feedback4" class="form-control" placeholder="Nama Arena"
-                                    name="nama arena">
+                                <label for=""nama_arena class="sr-only">Nama Arena</label>
+                                <input type="text" id="nama_arena" class="form-control" placeholder="Nama Arena"
+                                    name="nama_arena">
                             </div>
                             <div class="form-group">
-                                <label for="feedback4" class="sr-only">Kode Lapangan</label>
-                                <input type="text" id="feedback4" class="form-control" placeholder="Foto"
-                                    name="kode lapangan">
+                                <label for="kode_lapangan" class="sr-only">Kode Lapangan</label>
+                                <input type="text" id="kode_lapangan" class="form-control" placeholder="Foto"
+                                    name="kode_lapangan">
                             </div>
                             <div class="form-group">
-                                <label for="feedback4" class="sr-only">Id Users</label>
-                                <input type="text" id="feedback4" class="form-control" placeholder="Id Users"
-                                    name="id users">
+                                <label for="id_users" class="sr-only">Id Users</label>
+                                <input type="text" id="id_users" class="form-control" placeholder="Id Users"
+                                    name="id_users">
                             </div>
                             <div class="form-group">
-                                <label for="feedback4" class="sr-only">No Jadwal</label>
-                                <input type="number" id="feedback4" class="form-control" placeholder="No Jadwal"
-                                    name="no jadwal">
+                                <label for="no_jadwal" class="sr-only">No Jadwal</label>
+                                <input type="number" id="no_jadwal" class="form-control" placeholder="No Jadwal"
+                                    name="no_jadwal">
                             </div>
                             <div class="form-group">
-                                <label for="feedback4" class="sr-only">Dp</label>
-                                <input type="number" id="feedback4" class="form-control" placeholder="Dp"
+                                <label for="dp" class="sr-only">Dp</label>
+                                <input type="number" id="dp" class="form-control" placeholder="Dp"
                                     name="dp">
                             </div>
                             <div class="form-group">
-                                <label for="feedback4" class="sr-only">Status Dp</label>
-                                <input type="text" id="feedback4" class="form-control" placeholder="Status Dp"
-                                    name="status dp">
+                                <label for="status_dp" class="sr-only">Status Dp</label>
+                                <input type="text" id="status_dp" class="form-control" placeholder="Status Dp"
+                                    name="status_dp">
                             </div>
                             <div class="form-group">
-                                <label for="feedback4" class="sr-only">Bukti</label>
-                                <input type="text" id="feedback4" class="form-control" placeholder="Bukti"
+                                <label for="bukti" class="sr-only">Bukti</label>
+                                <input type="text" id="bukti" class="form-control" placeholder="Bukti"
                                     name="bukti">
                             </div>
                         </div>
@@ -88,9 +88,11 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Nama</th>
-                            <th>Email</th>
-                            <th>Id Users</th>
+                            <th>Kode Booking</th>
+                            <th>Tanggal Main</th>
+                            <th>Tanggal Booking</th>
+                            <th>Nama Arena</th>
+                            <th>Status Dp</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -104,7 +106,7 @@
                                 <a href="" class="btn btn-warning">
                                     Edit
                                 </a>
-                                <form method="post" action="{{ url('/admin/hak_akses/'.$data->id) }}" style="display:inline">
+                                <form method="post" action="{{ url('/owner/booking/'.$data->kode_booking) }}" style="display:inline">
                                     @method("delete")
                                     {{ csrf_field() }}
                                     <button type="submit" class="btn btn-danger">
@@ -117,7 +119,7 @@
                                 <a href="" class="btn btn-warning">
                                     Edit
                                 </a>
-                                <form method="post" action="{{ url('/admin/users/'.$data->id) }}" style="display:inline">
+                                <form method="post" action="{{ url('/owner/booking/'.$data->kode_booking) }}" style="display:inline">
                                     @method("delete")
                                     {{ csrf_field() }}
                                     <button type="submit" class="btn btn-danger">
@@ -130,7 +132,7 @@
                                 <a href="" class="btn btn-warning">
                                     Edit
                                 </a>
-                                <form method="post" action="{{ url('/admin/users/'.$data->id) }}" style="display:inline">
+                                <form method="post" action="{{ url('/owner/booking/'.$data->kode_booking) }}" style="display:inline">
                                     @method("delete")
                                     {{ csrf_field() }}
                                     <button type="submit" class="btn btn-danger">

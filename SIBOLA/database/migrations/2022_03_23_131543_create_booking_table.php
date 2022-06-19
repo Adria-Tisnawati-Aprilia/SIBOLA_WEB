@@ -15,15 +15,13 @@ return new class extends Migration
     {
         Schema::create('booking', function (Blueprint $table) {
             $table->string("kode_booking")->primary();
-            $table->date("tgl_booking");
-            $table->date("tgl_main");
-            $table->string("nama_arena");
+            $table->integer("id_users_booking");
+            $table->string("kode_arena");
             $table->string("kode_lapangan");
-            $table->integer("id_users");
-            $table->integer("no_jadwal");
-            $table->double("dp");
-            $table->string("status_dp");
-            $table->string("bukti");
+            $table->string("nama_arena");
+            $table->date("tgl_booking");
+            $table->double("harga");
+            $table->integer("id_petugas");
         });
     }
 

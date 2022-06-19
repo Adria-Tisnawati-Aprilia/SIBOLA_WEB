@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AppController;
 use App\Http\Controllers\ArenaController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\HakAksesController;
@@ -20,9 +21,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get("/data", function () {
-    echo "ada";
-});
 Route::get('/coba', function () {
     return view("admin.layout.baground");
 });
@@ -31,6 +29,9 @@ Route::group(["middleware" => "admin"], function () {
     Route::group(["middleware" => ["can:admin"]], function () {
 
         Route::prefix("admin")->group(function () {
+            Route::get("/", [AppController::class, "index"]);
+            Route::get("/home", [AppController::class, "home"]);
+
             Route::get("/hak_akses/edit", [HakAksesController::class, "edit"]);
             Route::put("/hak_akses/simpan", [HakAksesController::class, "update"]);
             Route::resource("/hak_akses", HakAksesController::class);
@@ -65,10 +66,6 @@ Route::get('/', function () {
 
 Route::get("/home", function () {
     return view("/admin/home");
-});
-
-Route::get('/admin', function () {
-    return view("/admin/layout/baground");
 });
 
 Route::get("/home", function () {

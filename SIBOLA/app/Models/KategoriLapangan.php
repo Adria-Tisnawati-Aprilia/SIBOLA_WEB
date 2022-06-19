@@ -12,4 +12,6 @@ class KategoriLapangan extends Model
     protected $table = "kategori_lapangan";
 
     protected $guarded = [''];
+
+    public $timestamps = false;
 }

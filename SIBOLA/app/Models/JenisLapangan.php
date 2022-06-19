@@ -12,4 +12,6 @@ class JenisLapangan extends Model
     protected $table = "jenis_lapangan";
 
     protected $guarded = [''];
+
+    public $timestamps = false;
 }

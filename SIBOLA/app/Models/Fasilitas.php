@@ -12,5 +12,6 @@ class Fasilitas extends Model
     protected $table = "fasilitas";
 
     protected $guarded = [''];
-    
+
+    public $timestamps = false;
 }

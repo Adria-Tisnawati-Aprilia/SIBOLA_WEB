@@ -15,5 +15,24 @@ class FasilitasSeeder extends Seeder
      */
     public function run()
     {
+        Fasilitas::create([
+            "fasilitas" => "Kamar Mandi",
+            "status" => "1"
+        ]);
+
+        Fasilitas::create([
+            "fasilitas" => "Toilet",
+            "status" => "1"
+        ]);
+
+        Fasilitas::create([
+            "fasilitas" => "Bangku",
+            "status" => "1"
+        ]);
+
+        Fasilitas::create([
+            "fasilitas" => "Mushola",
+            "status" => "1"
+        ]);
     }
 }

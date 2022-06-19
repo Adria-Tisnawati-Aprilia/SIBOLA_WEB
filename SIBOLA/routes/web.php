@@ -19,26 +19,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/coba', function(){
+Route::get("/data", function () {
+    echo "ada";
+});
+Route::get('/coba', function () {
     return view("admin.layout.baground");
 });
 
-Route::group(["middleware"=>"admin"], function() {
-    Route::group(["middleware" => ["can:admin"]], function() {
+Route::group(["middleware" => "admin"], function () {
+    Route::group(["middleware" => ["can:admin"]], function () {
 
-        Route::prefix("admin")->group(function() {
+        Route::prefix("admin")->group(function () {
             Route::get("/hak_akses/edit", [HakAksesController::class, "edit"]);
             Route::put("/hak_akses/simpan", [HakAksesController::class, "update"]);
             Route::resource("/hak_akses", HakAksesController::class);
 
             Route::get("/users/edit", [UsersController::class, "edit"]);
             Route::resource("/users", UsersController::class);
-    });
+        });
     });
 });
 
 
-Route::prefix("owner")->group(function() {
+Route::prefix("owner")->group(function () {
     Route::get("/lapangan/edit_lapangan", [LapanganController::class, "edit_lapangan"]);
     Route::put("/lapangan/simpan", [LapanganController::class, "simpan_lapangan"]);
     Route::delete("/lapangan/{kode_lapangan}", [LapanganController::class, "destroy"]);
@@ -57,7 +60,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("/home", function() {
+Route::get("/home", function () {
     return view("/admin/home");
 });
 
@@ -65,15 +68,15 @@ Route::get('/admin', function () {
     return view("/admin/layout/baground");
 });
 
-Route::get("/home", function() {
+Route::get("/home", function () {
     return view("/admin/hak_akses");
 });
 
-Route::get("/home", function() {
+Route::get("/home", function () {
     return view("/admin/home");
 });
 
-Route::get("/home", function() {
+Route::get("/home", function () {
     return view("/admin/home");
 });
 
@@ -83,18 +86,18 @@ Route::post("/login", [LoginController::class, "post_login"]);
 
 Route::get("/arena", [ArenaController::class, "index"]);
 
-Route::get("/hak_akses", function() {
+Route::get("/hak_akses", function () {
     return view("/admin/hak_akses/index");
 });
 
-Route::get("/users", function() {
+Route::get("/users", function () {
     return view("/admin/users/users");
 });
 
-Route::get("/lapangan", function() {
+Route::get("/lapangan", function () {
     return view("/owner/lapangan/lapangan");
 });
 
-Route::get("/booking", function() {
+Route::get("/booking", function () {
     return view("/owner/booking/booking");
 });

@@ -6,6 +6,7 @@ use App\Http\Controllers\HakAksesController;
 use App\Http\Controllers\LapanganController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\OwnerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,7 +34,9 @@ Route::group(["middleware" => "admin"], function () {
             Route::get("/hak_akses/edit", [HakAksesController::class, "edit"]);
             Route::put("/hak_akses/simpan", [HakAksesController::class, "update"]);
             Route::resource("/hak_akses", HakAksesController::class);
-
+            Route::resource("/owner", OwnerController::class);
+            Route::get("/owner/edit", [OwnerController::class, "edit"]);
+            Route::put("/owner/simpan", [OwnerController::class, "update"]);
             Route::get("/users/edit", [UsersController::class, "edit"]);
             Route::resource("/users", UsersController::class);
         });

@@ -32,12 +32,11 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Nama</th>
-                                <th>Email</th>
-                                <th>No Hp</th>
-                                <th>Foto</th>
+                                <th>Id</th>
+                                <th>Tanggal Bergabung</th>
+                                <th>Status</th>
                                 <th>Alamat</th>
-                                <th>Hak Akses</th>
+                                <th>Logo</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -46,17 +45,16 @@
                             @foreach($data_user as $data)
                             <tr>
                                 <td>{{ ++$no }}.</td>
-                                <td>{{ $data->nama }}</td>
-                                <td>{{ $data->email }}</td>
-                                <td>{{ $data->no_hp }}</td>
-                                <td>{{ $data->foto }}</td>
-                                <td>{{ $data->alamat }}</td>
-                                <td>{{ $data->getHakAkses->nama }}</td>
+                                <td>{{ $data->id }}</td>
+                                <td>{{ $data->tanggal_bergabung }}</td>
+                                <td>{{ $data->status }}</td>
+                                <td>{{ $data->alamat_owner }}</td>
+                                <td>{{ $data->logo_owner }}</td>
                                 <td>
-                                    <button onclick="editUsers({{ $data->id }})" type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modal-default">
+                                    <button onclick="editOwner({{ $data->id }})" type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modal-default">
                                         <i class="fa fa-edit"></i> Edit
                                     </button>
-                                    <form method="post" action="{{ url('/admin/users/'.$data->id) }}" style="display:inline">
+                                    <form method="post" action="{{ url('/admin/owner/'.$data->id) }}" style="display:inline">
                                         @method("delete")
                                         {{ csrf_field() }}
                                         <button type="submit" class="btn btn-danger">
@@ -86,32 +84,28 @@
                     <i class="fa fa-plus"></i> Tambah Data
                 </h4>
             </div>
-            <form action="{{ url('/admin/users') }}" method="POST">
+            <form action="{{ url('/admin/owner') }}" method="POST">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="nama"> Nama </label>
-                        <input type="text" name="nama" id="nama" class="form-control" placeholder="Masukkan Nama">
+                        <label for="id"> Id </label>
+                        <input type="text" name="id" id="id" class="form-control" placeholder="Masukkan Id">
                     </div>
                     <div class="form-group">
-                        <label for="email"> Email </label>
-                        <input type="text" name="email" id="email" class="form-control" placeholder="Masukkan Email">
+                        <label for="tanggal_bergabung"> Tanggal Bergabung </label>
+                        <input type="text" name="tanggal_bergabung" id="tanggal_bergabung" class="form-control" placeholder="Masukkan Tanggal">
                     </div>
                     <div class="form-group">
-                        <label for="no_hp"> No Hp </label>
-                        <input type="text" name="no_hp" id="no_hp" class="form-control" placeholder="Masukkan No Hp">
-                    </div>
-                    <div class="form-group">
-                        <label for="foto"> Foto </label>
-                        <input type="text" name="foto" id="foto" class="form-control" placeholder="Masukkan Foto">
+                        <label for="status"> Status </label>
+                        <input type="text" name="status" id="status" class="form-control" placeholder="Masukkan Status">
                     </div>
                     <div class="form-group">
                         <label for="alamat"> Alamat </label>
                         <input type="text" name="alamat" id="alamat" class="form-control" placeholder="Masukkan Alamat">
                     </div>
                     <div class="form-group">
-                        <label for="hak_akses"> Hak Akses </label>
-                        <input type="text" name="hak_akses" id="hak_akses" class="form-control" placeholder="Masukkan Hak Akses">
+                        <label for="logo_owner"> logo </label>
+                        <input type="text" name="logo_owner" id="logo_owner" class="form-control" placeholder="Masukkan Logo">
                     </div>
                 </div>
                 <div class="modal-footer">

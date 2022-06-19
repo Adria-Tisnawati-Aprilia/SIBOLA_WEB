@@ -57,6 +57,7 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="{{url('/admin/hak_akses')}}"><i class="fa fa-circle-o"></i> Role </a></li>
+                    li><a href="{{url('/admin/owner')}}"><i class="fa fa-circle-o"></i> Owner </a></li>
                     <li><a href="{{url('/admin/users')}}"><i class="fa fa-circle-o"></i> Users </a></li>
                 </ul>
             </li>

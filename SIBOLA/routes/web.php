@@ -4,6 +4,7 @@ use App\Http\Controllers\AppController;
 use App\Http\Controllers\ArenaController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\FasilitasController;
+use App\Http\Controllers\FasilitasArenaController;
 use App\Http\Controllers\HakAksesController;
 use App\Http\Controllers\JenisLapanganController;
 use App\Http\Controllers\KategoriLapanganController;
@@ -59,6 +60,10 @@ Route::group(["middleware" => "admin"], function () {
         Route::get("/fasilitas/edit", [FasilitasController::class, "edit"]);
         Route::put("/fasilitas/simpan", [FasilitasController::class, "update"]);
         Route::resource("fasilitas", FasilitasController::class);
+
+        Route::get("/fasilitas_arena/edit", [FasilitasArenaController::class, "edit"]);
+        Route::put("/fasilitas_arena/simpan", [FasilitasArenaController::class, "update"]);
+        Route::resource("fasilitas_arena", FasilitasArenaController::class);
 
         Route::get("/lapangan/edit_lapangan", [LapanganController::class, "edit_lapangan"]);
         Route::put("/lapangan/simpan", [LapanganController::class, "simpan_lapangan"]);

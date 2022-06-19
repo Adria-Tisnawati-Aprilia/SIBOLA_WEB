@@ -46,7 +46,7 @@ class LapanganController extends Controller
         Lapangan::where("kode_lapangan", $request->kode_lapangan)->update([
             "kode_arena" => $request->kode_arena,
             "nama_lapangan" => $request->nama_lapangan,
-            "alas_lapangan" => $request->alas_lapangan,
+            //"alas_lapangan" => $request->alas_lapangan,
             //"foto" => $request->foto,
             "harga" => $request->harga
         ]);

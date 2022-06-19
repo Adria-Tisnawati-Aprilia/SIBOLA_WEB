@@ -66,6 +66,11 @@
                             </a>
                         </li>
                         <li>
+                            <a href="{{ url('/owner/fasilitas_arena') }}">
+                                <i class="fa fa-circle-o"></i> Fasilitas Arena
+                            </a>
+                        </li>
+                        <li>
                             <a href="{{ url('/owner/jenis_lapangan') }}">
                                 <i class="fa fa-circle-o"></i> Jenis Lapangan
                             </a>

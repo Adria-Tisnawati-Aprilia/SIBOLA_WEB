@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('fasilitas', function (Blueprint $table) {
             $table->id();
             $table->string('fasilitas');
-            $table->string('status');
+            $table->string('status')->default("1");
         });
     }
 

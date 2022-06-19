@@ -1,22 +1,26 @@
-
 <style>
     .slimScrollBar {
         background: gray !important;
         opacity: .5 !important;
     }
+
     .skin-green .sidebar-menu>li.active>a {
         border-left-color: #008d4c;
     }
+
     .skin-green .sidebar-menu>li>.treeview-menu {
         padding-left: 0;
         margin-right: 0;
     }
+
     .skin-green .sidebar-menu>li>.treeview-menu>li.active>i {
         padding-left: 100px;
     }
+
     .skin-green .sidebar-menu>li>.treeview-menu>li.active {
         background-color: #008d4c;
     }
+
     .skin-green .sidebar-menu>li>.treeview-menu>li a {
         margin-left: 3px;
     }
@@ -33,9 +37,10 @@
             </div>
         </div>
 
-            <ul class="sidebar-menu" data-widget="tree">
+        <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
-            <li><a href="{{ url('/admin/home') }}"><i class="fa fa-circle-o text-red"></i> <span>Dashboard</span></a></li>
+            <li><a href="{{ url('/admin/home') }}"><i class="fa fa-circle-o text-red"></i> <span>Dashboard</span></a>
+            </li>
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-share"></i> <span>Data Master</span>
@@ -44,8 +49,33 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{url('/owner/arena/')}}"><i class="fa fa-circle-o"></i> Arena </a></li>
-                    <li><a href="{{url('/owner/lapangan')}}"><i class="fa fa-circle-o"></i> Lapangan</a></li>
+                    <li>
+                        <a href="{{ url('/owner/arena/') }}">
+                            <i class="fa fa-circle-o"></i> Arena
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/owner/lapangan') }}">
+                            <i class="fa fa-circle-o"></i> Lapangan
+                        </a>
+                    </li>
+                    @can('owner')
+                        <li>
+                            <a href="{{ url('/owner/fasilitas') }}">
+                                <i class="fa fa-circle-o"></i> Fasilitas
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('/owner/jenis_lapangan') }}">
+                                <i class="fa fa-circle-o"></i> Jenis Lapangan
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('/owner/kategori_lapangan') }}">
+                                <i class="fa fa-circle-o"></i> Kategori Lapangan
+                            </a>
+                        </li>
+                    @endcan
                 </ul>
             </li>
             <li class="treeview">
@@ -56,25 +86,25 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{url('/admin/hak_akses')}}"><i class="fa fa-circle-o"></i> Role </a></li>
-                    li><a href="{{url('/admin/owner')}}"><i class="fa fa-circle-o"></i> Owner </a></li>
-                    <li><a href="{{url('/admin/users')}}"><i class="fa fa-circle-o"></i> Users </a></li>
-                </ul>
+                    <li><a href="{{ url('/admin/hak_akses') }}"><i class="fa fa-circle-o"></i> Role </a></li>
+                    li><a href="{{ url('/admin/owner') }}"><i class="fa fa-circle-o"></i> Owner </a>
             </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-share"></i> <span>Multilevel</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="{{url('/owner/booking/')}}"><i class="fa fa-circle-o"></i> Booking </a></li>
-                    <li><a href="{{url('/owner/laporan/')}}"><i class="fa fa-circle-o"></i> Laporan </a></li>
-                </ul>
-            </li>
+            <li><a href="{{ url('/admin/users') }}"><i class="fa fa-circle-o"></i> Users </a></li>
+        </ul>
+        </li>
+        <li class="treeview">
+            <a href="#">
+                <i class="fa fa-share"></i> <span>Multilevel</span>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+                <li><a href="{{ url('/owner/booking/') }}"><i class="fa fa-circle-o"></i> Booking </a></li>
+                <li><a href="{{ url('/owner/laporan/') }}"><i class="fa fa-circle-o"></i> Laporan </a></li>
+            </ul>
+        </li>
         </ul>
 
     </section>
 </aside>
-

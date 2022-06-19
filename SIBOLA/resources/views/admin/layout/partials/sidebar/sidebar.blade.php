@@ -61,6 +61,11 @@
                     </li>
                     @can('owner')
                         <li>
+                            <a href="{{ url('/owner/fasilitas') }}">
+                                <i class="fa fa-circle-o"></i> Fasilitas
+                            </a>
+                        </li>
+                        <li>
                             <a href="{{ url('/owner/jenis_lapangan') }}">
                                 <i class="fa fa-circle-o"></i> Jenis Lapangan
                             </a>

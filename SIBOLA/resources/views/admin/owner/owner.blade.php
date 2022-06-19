@@ -42,7 +42,7 @@
                         </thead>
                         <tbody>
                             @php $no=0 @endphp
-                            @foreach($data_user as $data)
+                            @foreach($data_owner as $data)
                             <tr>
                                 <td>{{ ++$no }}.</td>
                                 <td>{{ $data->id }}</td>
@@ -54,7 +54,7 @@
                                     <button onclick="editOwner({{ $data->id }})" type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modal-default">
                                         <i class="fa fa-edit"></i> Edit
                                     </button>
-                                    <form method="post" action="{{ url('/admin/owner/'.$data->id) }}" style="display:inline">
+                                    <form method="post" action="{{ url('/admin/owner/owner'.$data->id) }}" style="display:inline">
                                         @method("delete")
                                         {{ csrf_field() }}
                                         <button type="submit" class="btn btn-danger">
@@ -93,19 +93,16 @@
                     </div>
                     <div class="form-group">
                         <label for="tanggal_bergabung"> Tanggal Bergabung </label>
-                        <input type="text" name="tanggal_bergabung" id="tanggal_bergabung" class="form-control" placeholder="Masukkan Tanggal">
+                        <input type="date" name="tanggal_bergabung" id="tanggal_bergabung" class="form-control" placeholder="Masukkan Tanggal">
                     </div>
-                    <div class="form-group">
-                        <label for="status"> Status </label>
-                        <input type="text" name="status" id="status" class="form-control" placeholder="Masukkan Status">
-                    </div>
+                    
                     <div class="form-group">
                         <label for="alamat"> Alamat </label>
                         <input type="text" name="alamat" id="alamat" class="form-control" placeholder="Masukkan Alamat">
                     </div>
                     <div class="form-group">
                         <label for="logo_owner"> logo </label>
-                        <input type="text" name="logo_owner" id="logo_owner" class="form-control" placeholder="Masukkan Logo">
+                        <input type="file" name="logo_owner" id="logo_owner" class="form-control" placeholder="Masukkan Logo">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -159,7 +156,7 @@
 <script>
     function editUsers(id) {
         $.ajax({
-            url : "{{ url('/admin/users/edit') }}",
+            url : "{{ url('/admin/owner/edit') }}",
             type : "GET",
             data : { id : id },
             success : function(data) {

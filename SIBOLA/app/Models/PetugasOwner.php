@@ -14,4 +14,14 @@ class PetugasOwner extends Model
     protected $guarded = [''];
 
     public $timestamps = false;
+
+    public function getUsers()
+    {
+        return $this->belongsTo("App\Models\User", "id", "id");
+    }
+
+    public function getOwner()
+    {
+        return $this->belongsTo("App\Models\Owner", "id_owner", "id");
+    }
 }

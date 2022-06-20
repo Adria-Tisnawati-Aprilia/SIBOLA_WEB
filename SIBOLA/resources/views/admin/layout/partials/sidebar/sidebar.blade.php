@@ -66,6 +66,11 @@
                             </a>
                         </li>
                         <li>
+                            <a href="{{ url('/owner/fasilitas_arena') }}">
+                                <i class="fa fa-circle-o"></i> Fasilitas Arena
+                            </a>
+                        </li>
+                        <li>
                             <a href="{{ url('/owner/jenis_lapangan') }}">
                                 <i class="fa fa-circle-o"></i> Jenis Lapangan
                             </a>
@@ -99,7 +104,7 @@
         </li>
         <li class="treeview">
             <a href="#">
-                <i class="fa fa-share"></i> <span>Multilevel</span>
+                <i class="fa fa-share"></i> <span>Booking Management</span>
                 <span class="pull-right-container">
                     <i class="fa fa-angle-left pull-right"></i>
                 </span>

@@ -4,6 +4,7 @@ use App\Http\Controllers\AppController;
 use App\Http\Controllers\ArenaController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\FasilitasController;
+use App\Http\Controllers\FasilitasArenaController;
 use App\Http\Controllers\HakAksesController;
 use App\Http\Controllers\JenisLapanganController;
 use App\Http\Controllers\KategoriLapanganController;
@@ -66,6 +67,10 @@ Route::group(["middleware" => "admin"], function () {
         Route::put("/petugas_owner/simpan", [PetugasOwnerController::class, "update"]);
         Route::resource("petugas_owner", PetugasOwnerController::class);
 
+        Route::get("/fasilitas_arena/edit", [FasilitasArenaController::class, "edit"]);
+        Route::put("/fasilitas_arena/simpan", [FasilitasArenaController::class, "update"]);
+        Route::resource("fasilitas_arena", FasilitasArenaController::class);
+
         Route::get("/lapangan/edit_lapangan", [LapanganController::class, "edit_lapangan"]);
         Route::put("/lapangan/simpan", [LapanganController::class, "simpan_lapangan"]);
         Route::delete("/lapangan/{kode_lapangan}", [LapanganController::class, "destroy"]);
@@ -75,8 +80,17 @@ Route::group(["middleware" => "admin"], function () {
         Route::put("/arena/simpan", [ArenaController::class, "simpan_arena"]);
         Route::delete("/arena/{kode_arena}", [ArenaController::class, "destroy"]);
         Route::resource("/arena", ArenaController::class);
+
+        Route::get("/booking/edit_booking", [BookingController::class, "edit_booking"]);
+        Route::put("/booking/simpan", [BookingController::class, "simpan_booking"]);
         Route::resource("/booking", BookingController::class);
     });
+
+    Route::get("/arena/edit_arena", [ArenaController::class, "edit_arena"]);
+    Route::put("/arena/simpan", [ArenaController::class, "update"]);
+    Route::delete("/arena/{kode_arena}", [ArenaController::class, "destroy"]);
+    Route::resource("/arena", ArenaController::class);
+    Route::resource("/booking", BookingController::class);
 
     Route::prefix("admin")->group(function () {
         Route::get("/", [AppController::class, "index"]);

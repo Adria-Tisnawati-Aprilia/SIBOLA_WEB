@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Fasilitas;
 use App\Models\FasilitasArena;
+use App\Models\Arena;
 use Illuminate\Http\Request;
 
 class FasilitasArenaController extends Controller
@@ -11,10 +12,12 @@ class FasilitasArenaController extends Controller
     public function index()
     {
         $data = [
-            "data_fasilitas_arena" => FasilitasArena::get()
+            "data_fasilitas_arena" => FasilitasArena::get(),
+            "data_fasilitas" => Fasilitas::get(),
+            "data_arena" => Arena::get()
         ];
 
-        return view("owner.fasilitas_arena.index", $data);
+        return view("owner.fasilitas_arena.fasilitas", $data);
     }
 
     public function store(Request $request)

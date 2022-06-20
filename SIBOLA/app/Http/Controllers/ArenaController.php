@@ -20,9 +20,12 @@ class ArenaController extends Controller
     public function store(Request $request){
         Arena::create([
             "kode_arena" => time(),
-            "id_users" => Auth::user()->id,
+            "id_owner" => Auth::owner()->id,
             "alamat" => $request->alamat,
-            "nama_arena" => $request->nama_arena
+            "nama_arena" => $request->nama_arena,
+            "deskripsi" => $request->deskripsi,
+            "no_hp" => $request->no_hp,
+            "foto" => $request->foto
         ]);
 
         return back();
@@ -36,10 +39,13 @@ class ArenaController extends Controller
         return view('/owner/arena/edit_arena', $data);
     }
 
-    public function simpan_arena(Request $request){
+    public function update(Request $request){
         Arena::where("kode_arena", $request->kode_arena)->update([
-            "alamat"=> $request->alamat,
-            "nama_arena"=> $request-> nama_arena
+            "alamat" => $request->alamat,
+            "nama_arena" => $request->nama_arena,
+            "deskripsi" => $request->deskripsi,
+            "no_hp" => $request->no_hp,
+            "foto" => $request->foto
         ]);
 
         return back();

@@ -35,10 +35,7 @@
                                 <th>Kode Lapangan</th>
                                 <th>Kode Arena</th>
                                 <th>Nama Lapangan</th>
-                                <th>Alas Lapangan</th>
-
                                 <th>Harga</th>
-
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -50,7 +47,6 @@
                                 <td>{{ $data->kode_lapangan }}</td>
                                 <td>{{ $data->kode_arena }}</td>
                                 <td>{{ $data->nama_lapangan }}</td>
-                                <td>{{ $data->alas_lapangan }}</td>
                                 <td>{{ $data->harga }}</td>
                                 <td class="text-center">
                                     <button onclick="editLapangan('{{ $data->kode_lapangan }}')" type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modal-default">
@@ -90,12 +86,12 @@
                 @csrf
                 <div class="box-body">
                     <div class="form-group">
-                        <label for="kode_lapangan" class="sr-only">Kode Lapangan</label>
+                        <label for="kode_lapangan">Kode Lapangan</label>
                         <input type="text" id="kode_lapangan" class="form-control" placeholder="Kode Lapangan"
                         name="kode_lapangan">
                     </div>
                     <div class="form-group">
-                        <label for="kode_arena" class="sr-only">Kode Arena</label>
+                        <label for="kode_arena">Kode Arena</label>
                         <select name="kode_arena" class="form-control" id="kode_arena">
                             <option value="">- Pilih -</option>
                             @foreach ($data_arena as $data)
@@ -106,22 +102,12 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="nama_lapangan" class="sr-only">Nama Lapangan</label>
+                        <label for="nama_lapangan">Nama Lapangan</label>
                         <input type="text" id="nama_lapangan" class="form-control" placeholder="Nama Lapangan"
                         name="nama_lapangan">
                     </div>
                     <div class="form-group">
-                        <label for="alas_lapangan" class="sr-only">Alas Lapangan</label>
-                        <input type="text" id="alas_lapangan" class="form-control" placeholder="Alas Lapangan"
-                        name="alas_lapangan">
-                    </div>
-                    <div class="form-group">
-                        <label for="foto" class="sr-only">Foto</label>
-                        <input type="file" id="foto" class="form-control" placeholder="Foto"
-                        name="foto">
-                    </div>
-                    <div class="form-group">
-                        <label for="harga" class="sr-only">Harga</label>
+                        <label for="harga">Harga</label>
                         <input type="double" id="harga" class="form-control" placeholder="Harga"
                         name="harga">
                     </div>

@@ -11,29 +11,31 @@ class LapanganController extends Controller
 {
     public function index() {
         $data = [
-            "data_arena" => Arena::where("id_users", Auth::user()->id)->get(),
+            "data_arena" => Arena::where("id_owner", Auth::user()->id)->get(),
             "data_lapangan" => Lapangan::all()
         ];
 
         return view("owner.lapangan.lapangan", $data);
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         Lapangan::create([
             "kode_lapangan" => time(),
             "kode_arena" => $request->kode_arena,
             "nama_lapangan" => $request->nama_lapangan,
-            "alas_lapangan" => $request->alas_lapangan,
-            //"foto" => $request->foto,
-            "harga" => $request->harga
-            ]);
+            "id_jenis_lapangan" => $request->id_jenis_lapangan,
+            "harga" => $request->harga,
+            "status" => $request->status,
+            "id_kategori_lapangan" => $request->id_kategori_lapangan
+        ]);
 
         return back();
     }
 
     public function edit_lapangan(Request $request){
         $data = [
-            "data_arena" => Arena::where("id_users", Auth::user()->id)->get(),
+            "data_arena" => Arena::where("id_owner", Auth::user()->id)->get(),
             "edit_lapangan" => Lapangan::where("kode_lapangan", $request->kode_lapangan)->first()
         ];
 
@@ -44,7 +46,7 @@ class LapanganController extends Controller
         Lapangan::where("kode_lapangan", $request->kode_lapangan)->update([
             "kode_arena" => $request->kode_arena,
             "nama_lapangan" => $request->nama_lapangan,
-            "alas_lapangan" => $request->alas_lapangan,
+            //"alas_lapangan" => $request->alas_lapangan,
             //"foto" => $request->foto,
             "harga" => $request->harga
         ]);

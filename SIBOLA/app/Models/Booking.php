@@ -9,7 +9,7 @@ class Booking extends Model
 {
     use HasFactory;
 
-    protected $table = "tb_booking";
+    protected $table = "booking";
 
     protected $guarded = [''];
 

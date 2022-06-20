@@ -78,11 +78,11 @@
 @section("script_js")
 
 <script type="text/javascript">
-    function editArena(kode_arena) {
+    function editBooking(kode_booking) {
         $.ajax({
-            url : "{{ url('/owner/arena/edit_arena') }}",
+            url : "{{ url('/owner/booking/edit') }}",
             type : "GET",
-            data : { kode_arena : kode_arena },
+            data : { kode_booking : kode_booking },
             success : function(data) {
                 $("#modal-content-edit").html(data);
                 return true;

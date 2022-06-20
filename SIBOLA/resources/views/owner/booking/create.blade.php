@@ -42,7 +42,7 @@
                                     <option value="">- Pilih -</option>
                                     @foreach ($data_arena as $data)
                                     <option value="{{ $data->id }}">
-                                        {{ $data->arena }}
+                                        {{ $data->nama_arena }}
                                     </option>
                                     @endforeach
                                 </select>
@@ -53,7 +53,7 @@
                                     <option value="">- Pilih -</option>
                                     @foreach ($data_lapangan as $data)
                                     <option value="{{ $data->id }}">
-                                        {{ $data->lapangan }}
+                                        {{ $data->nama_lapangan }}
                                     </option>
                                     @endforeach
                                 </select>
@@ -89,11 +89,11 @@
 @section("script_js")
 
 <script type="text/javascript">
-    function editArena(kode_arena) {
+    function editBooking(kode_booking) {
         $.ajax({
-            url : "{{ url('/owner/arena/edit_arena') }}",
+            url : "{{ url('/owner/booking/edit') }}",
             type : "GET",
-            data : { kode_arena : kode_arena },
+            data : { kode_booking : kode_booking },
             success : function(data) {
                 $("#modal-content-edit").html(data);
                 return true;

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Booking;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Arena;
+use App\Models\User;
 use App\Models\Lapangan;
 
 class BookingController extends Controller
@@ -31,7 +32,7 @@ class BookingController extends Controller
     public function store(Request $request){
         Booking::create([
             "kode_booking" => time(),
-            "id_users" => Auth::users()->id,
+            "id_users" => Auth::user()->id,
             "kode_lapangan" => $request->kode_lapangan,
             "kode_arena" => $request->kode_arena,
             "tanggal_booking" => $request->tanggal_booking,
@@ -53,7 +54,7 @@ class BookingController extends Controller
     public function simpan_booking(Request $request){
         Booking::where("kode_booking", $request->kode_booking)->update([
             "kode_booking" => time(),
-            "id_users" => Auth::users()->id,
+            "id_users" => Auth::user()->id,
             "kode_lapangan" => $request->kode_lapangan,
             "kode_arena" => $request->kode_arena,
             "tanggal_booking" => $request->tanggal_booking,

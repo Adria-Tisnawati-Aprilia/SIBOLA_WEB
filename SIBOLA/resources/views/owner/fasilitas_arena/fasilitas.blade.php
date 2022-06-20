@@ -49,7 +49,7 @@
                                     <option value="">- Pilih -</option>
                                     @foreach ($data_arena as $data)
                                     <option value="{{ $data->id }}">
-                                        {{ $data->arena }}
+                                        {{ $data->nama_arena }}
                                     </option>
                                     @endforeach
                                 </select>

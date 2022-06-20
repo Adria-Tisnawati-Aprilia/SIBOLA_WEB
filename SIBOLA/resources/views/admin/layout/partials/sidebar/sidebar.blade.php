@@ -88,20 +88,22 @@
                     @endcan
                 </ul>
             </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-share"></i> <span>User Management</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="{{ url('/admin/hak_akses') }}"><i class="fa fa-circle-o"></i> Role </a></li>
-                    <li><a href="{{ url('/admin/owner') }}"><i class="fa fa-circle-o"></i> Owner </a>
-                    </li>
-                    <li><a href="{{ url('/admin/users') }}"><i class="fa fa-circle-o"></i> Users </a></li>
-                </ul>
-            </li>
+            @can('admin')
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-share"></i> <span>User Management</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{ url('/admin/hak_akses') }}"><i class="fa fa-circle-o"></i> Role </a></li>
+                        <li><a href="{{ url('/admin/owner') }}"><i class="fa fa-circle-o"></i> Owner </a>
+                        </li>
+                        <li><a href="{{ url('/admin/users') }}"><i class="fa fa-circle-o"></i> Users </a></li>
+                    </ul>
+                </li>
+            @endcan
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-share"></i> <span>Booking Management</span>

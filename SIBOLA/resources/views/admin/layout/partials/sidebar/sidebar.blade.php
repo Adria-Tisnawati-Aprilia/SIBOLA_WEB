@@ -97,30 +97,30 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="{{ url('/admin/hak_akses') }}"><i class="fa fa-circle-o"></i> Role </a></li>
-                    li><a href="{{ url('/admin/owner') }}"><i class="fa fa-circle-o"></i> Owner </a>
+                    <li><a href="{{ url('/admin/owner') }}"><i class="fa fa-circle-o"></i> Owner </a>
+                    </li>
+                    <li><a href="{{ url('/admin/users') }}"><i class="fa fa-circle-o"></i> Users </a></li>
+                </ul>
             </li>
-            <li><a href="{{ url('/admin/users') }}"><i class="fa fa-circle-o"></i> Users </a></li>
-        </ul>
-        </li>
-        <li class="treeview">
-            <a href="#">
-                <i class="fa fa-share"></i> <span>Booking Management</span>
-                <span class="pull-right-container">
-                    <i class="fa fa-angle-left pull-right"></i>
-                </span>
-            </a>
-            <ul class="treeview-menu">
-                <li><a href="{{ url('/owner/booking/') }}"><i class="fa fa-circle-o"></i> Booking </a></li>
-                <li><a href="{{ url('/owner/pembayaran/') }}"><i class="fa fa-circle-o"></i> Pembayaran </a></li>
-                <li><a href="{{ url('/owner/laporan/') }}"><i class="fa fa-circle-o"></i> Laporan </a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="{{ url('/admin/informasi_login') }}">
-                <i class="fa fa-book"></i>
-                <span>Informasi Login</span>
-            </a>
-        </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-share"></i> <span>Booking Management</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ url('/owner/booking/') }}"><i class="fa fa-circle-o"></i> Booking </a></li>
+                    <li><a href="{{ url('/owner/pembayaran/') }}"><i class="fa fa-circle-o"></i> Pembayaran </a></li>
+                    <li><a href="{{ url('/owner/laporan/') }}"><i class="fa fa-circle-o"></i> Laporan </a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="{{ url('/admin/informasi_login') }}">
+                    <i class="fa fa-book"></i>
+                    <span>Informasi Login</span>
+                </a>
+            </li>
         </ul>
     </section>
 </aside>

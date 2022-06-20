@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Owner;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -14,7 +15,16 @@ class OwnerController extends Controller
         ];
         return view("admin.owner.owner", $data);
     }
-    public function store(Request $request){
+    public function store(Request $request)
+    {
+
+        if ($request->file("foto_owner")) {
+            $data_owner = $request->file("foto_owner")->store("foto_owner");
+        }
+
+        if ($request->file("logo_owner")) {
+            $logo_owner = $request->file("logo_owner")->store("logo_owner");
+        }
 
         $user = new User;
         $user->nama = $request->nama;
@@ -23,6 +33,7 @@ class OwnerController extends Controller
         $user->no_hp = $request->no_hp;
         $user->id_hak_akses = 2;
         $user->alamat = $request->alamat;
+        $user->foto = $data_owner;
 
         $user->save();
 
@@ -30,7 +41,7 @@ class OwnerController extends Controller
             "id_users" => $user->id,
             "tanggal_bergabung" => $request->tanggal_bergabung,
             "alamat_owner" => $request->alamat_owner,
-            "logo" => $request->logo_owner,
+            "logo" => $logo_owner
         ]);
 
         return redirect()->back();
@@ -62,7 +73,8 @@ class OwnerController extends Controller
         return back();
     }
 
-    public function destroy($id){
+    public function destroy($id)
+    {
         Owner::where("id", $id)->delete();
 
         return redirect()->back();

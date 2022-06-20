@@ -18,12 +18,19 @@ class UsersController extends Controller
         return view("admin.users.users", $data);
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
+        if ($request->file("foto")) {
+            $data = $request->file("foto")->store("foto_users");
+        }
         User::create([
             "nama" => $request->nama,
             "email" => $request->email,
             "password" => bcrypt($request->password),
-            "id_hak_akses" => $request->id_hak_akses
+            "id_hak_akses" => 1,
+            "no_hp" => $request->no_hp,
+            "alamat" => $request->alamat,
+            "foto" => $data
         ]);
 
         return redirect()->back();
@@ -38,7 +45,8 @@ class UsersController extends Controller
         return view("admin.users.edit", $data);
     }
 
-    public function destroy($id){
+    public function destroy($id)
+    {
         User::where("id", $id)->delete();
 
         return redirect()->back();

@@ -54,7 +54,7 @@ class BookingController extends Controller
         return view('/owner/booking/edit', $data);
     }
 
-    public function simpan_booking(Request $request)
+    public function simpan(Request $request)
     {
         Booking::where("kode_booking", $request->kode_booking)->update([
             "kode_booking" => time(),

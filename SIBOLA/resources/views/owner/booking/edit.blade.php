@@ -2,27 +2,18 @@
     <label for="kode_booking"> Kode Booking</label>
     <input type="text" name="kode_booking" id="kode_booking" class="form-control" placeholder="Masukkan Kode Booking" value="{{ $edit->kode_booking }}" readonly>
 </div>
+<input type="hidden" name="id" value="{{ $edit->id }}">
 <div class="form-group">
-    <label for="kode_arena"> Arena </label>
-    <select name="kode_arena" class="form-control" id="kode_arena">
-        <option value="">- Pilih -</option>
-        @foreach ($data_arena as $data)
-        <option value="{{ $edit->id }}">
-            {{ $data->arena }}
-        </option>
-        @endforeach
-    </select>
+    <label for="kode_arena"> Kode Arena </label>
+    <input type="text" class="form-control" name="kode_arena" id="kode_arena" placeholder="Masukkan Kode Arena"
+        value="{{ $edit->kode_arena }}">
 </div>
+<input type="hidden" name="id" value="{{ $edit->id }}">
 <div class="form-group">
     <label for="kode_lapangan"> Kode Lapangan </label>
-    <select name="kode_lapangan" class="form-control" id="kode_lapangan">
-        <option value="">- Pilih -</option>
-        @foreach ($data_lapangan as $data)
-        <option value="{{ $edit->id }}">
-            {{ $data->lapangan }}
-        </option>
-        @endforeach
-    </select>
+    <input type="text" class="form-control" name="kode_lapangan" id="kode_lapangan" placeholder="Masukkan Kode Lapangan"
+        value="{{ $edit->kode_lapangan }}">
+</div>
 <div class="form-group">
     <label for="tanggal_booking"> Tanggal Booking</label>
     <input type="date" name="tanggal_booking" id="tanggal_booking" class="form-control" placeholder="Masukkan Tanggal Booking" value="{{ $edit->tanggal_booking }}">

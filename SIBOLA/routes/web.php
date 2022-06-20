@@ -83,7 +83,7 @@ Route::group(["middleware" => "admin"], function () {
         Route::resource("/arena", ArenaController::class);
 
         Route::get("/booking/edit", [BookingController::class, "edit"]);
-        Route::put("/booking/simpan", [BookingController::class, "simpan_booking"]);
+        Route::put("/booking/simpan", [BookingController::class, "simpan"]);
         Route::resource("/booking", BookingController::class);
 
         Route::get("/pembayaran/edit", [PembayaranController::class, "edit"]);

@@ -13,6 +13,7 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\PetugasOwnerController;
+use App\Http\Controllers\PembayaranController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -81,9 +82,13 @@ Route::group(["middleware" => "admin"], function () {
         Route::delete("/arena/{kode_arena}", [ArenaController::class, "destroy"]);
         Route::resource("/arena", ArenaController::class);
 
-        Route::get("/booking/edit_booking", [BookingController::class, "edit_booking"]);
+        Route::get("/booking/edit", [BookingController::class, "edit"]);
         Route::put("/booking/simpan", [BookingController::class, "simpan_booking"]);
         Route::resource("/booking", BookingController::class);
+
+        Route::get("/pembayaran/edit", [PembayaranController::class, "edit"]);
+        Route::put("/pembayaran/simpan", [PembayaranController::class, "simpan"]);
+        Route::resource("/pembayaran", PembayaranController::class);
     });
 
     Route::get("/arena/edit_arena", [ArenaController::class, "edit_arena"]);

@@ -10,11 +10,11 @@
 @section("konten")
 <section class="content-header">
     <h1>
-        Booking
+        Pembayaran
     </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Booking</li>
+        <li class="active">Pembayaran</li>
     </ol>
 </section>
 
@@ -23,9 +23,9 @@
         <div class="col-md-12">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <a href="{{url('/owner/booking/create')}}" class="btn btn-primary">
-                        <i class="fa fa-plus"></i> Tambah Data
-                    </a>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-tambah">
+                        <i class="fa fa-edit"></i> Tambah
+                    </button>
                 </div>
                 <div class="box-body">
                     <table class="table table-striped" id="example1">
@@ -33,28 +33,24 @@
                             <tr>
                                 <th>No</th>
                                 <th>Kode Booking</th>
-                                <th>Kode Arena</th>
-                                <th>Kode Lapangan</th>
-                                <th>Tanggal Booking</th>
-                                <th>Harga</th>
+                                <th>Bukti Bayar</th>
+                                <th>Id Users</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                             @php $no=0 @endphp
-                            @foreach($data_booking as $data)
+                            @foreach($data_pembayaran as $data)
                             <tr>
                                 <td>{{ ++$no }}.</td>
                                 <td>{{ $data->kode_booking }}</td>
-                                <td>{{ $data->kode_arena }}</td>
-                                <td>{{ $data->kode_lapangan }}</td>
-                                <td>{{ $data->tanggal_booking }}</td>
-                                <td>{{ $data->harga }}</td>
-                                <td>
-                                    <button onclick="editBooking('{{ $data->kode_booking }}')" type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modal-default">
+                                <td>{{ $data->bukti_bayar }}</td>
+                                <td>{{ $data->id_users_booking }}</td>
+                                <td class="text-center">
+                                    <button onclick="editPembayaran('{{ $data->id }}')" type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modal-default">
                                         <i class="fa fa-edit"></i> Edit
                                     </button>
-                                    <form method="post" action="{{ url('/owner/booking/'.$data->kode_booking) }}" style="display:inline">
+                                    <form method="post" action="{{ url('/owner/pembayaran/'.$data->id) }}" style="display:inline">
                                         @method("delete")
                                         {{ csrf_field() }}
                                         <button type="submit" class="btn btn-danger">
@@ -72,6 +68,50 @@
     </div>
 </section>
 
+<!-- Tambah Data -->
+<div class="modal fade" id="modal-tambah">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">
+                    <i class="fa fa-plus"></i> Tambah Data
+                </h4>
+            </div>
+            <form action="{{ url('/owner/pembayaran') }}" method="POST">
+                @csrf
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="kode_booking">Kode Booking</label>
+                        <input type="text" id="kode_booking" class="form-control" placeholder="Kode Booking"
+                        name="kode_booking">
+                    </div>
+                    <div class="form-group">
+                        <label for="bukti_bayar">Bukti Bayar</label>
+                        <input type="file" id="bukti_bayar" class="form-control" placeholder="Bukti Bayar"
+                        name="bukti_bayar">
+                    </div>
+                    <div class="form-group">
+                        <label for="id_users_booking">Id Users</label>
+                        <input type="int" id="id_users_booking" class="form-control" placeholder="Id Users"
+                        name="id_users_booking">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="reset" class="btn btn-danger pull-left" data-dismiss="modal">
+                        <i class="fa fa-times"></i> Batal
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fa fa-save"></i> Tambah
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- End -->
 
 <!-- Edit Data -->
 <div class="modal fade" id="modal-default">
@@ -83,7 +123,7 @@
                 </button>
                 <h4 class="modal-title">Edit Data</h4>
             </div>
-            <form action="{{ url('/owner/booking/simpan') }}" method="POST">
+            <form action="{{ url('/owner/pembayaran/simpan') }}" method="POST">
                 @method("PUT")
                 @csrf
                 <div class="modal-body" id="modal-content-edit">
@@ -108,11 +148,11 @@
 @section("script_js")
 
 <script type="text/javascript">
-    function editBooking(kode_booking) {
+    function editPembayaran(id) {
         $.ajax({
-            url : "{{ url('/owner/booking/edit') }}",
+            url : "{{ url('/owner/pembayaran/edit') }}",
             type : "GET",
-            data : { kode_booking : kode_booking },
+            data : { id : id },
             success : function(data) {
                 $("#modal-content-edit").html(data);
                 return true;

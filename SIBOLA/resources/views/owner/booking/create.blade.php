@@ -85,20 +85,3 @@
     </section>
 @endsection
 
-@section('script_js')
-    <script type="text/javascript">
-        function editBooking(kode_booking) {
-            $.ajax({
-                url: "{{ url('/owner/booking/edit') }}",
-                type: "GET",
-                data: {
-                    kode_booking: kode_booking
-                },
-                success: function(data) {
-                    $("#modal-content-edit").html(data);
-                    return true;
-                }
-            });
-        }
-    </script>
-@endsection

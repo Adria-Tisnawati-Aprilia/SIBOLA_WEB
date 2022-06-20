@@ -12,5 +12,6 @@ class PetugasOwner extends Model
     protected $table = "petugas_owner";
 
     protected $guarded = [''];
-    
+
+    public $timestamps = false;
 }

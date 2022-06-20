@@ -12,4 +12,6 @@ class FasilitasArena extends Model
     protected $table = "fasilitas_arena";
 
     protected $guarded = [''];
+
+    public $timestamps = false;
 }

@@ -22,8 +22,6 @@ class LaporanController extends Controller
             "kode_lapangan" => time(),
             "kode_arena" => $request->kode_arena,
             "nama_lapangan" => $request->nama_lapangan,
-            //"alas_lapangan" => $request->alas_lapangan,
-            //"foto" => $request->foto,
             "harga" => $request->harga
             ]);
 

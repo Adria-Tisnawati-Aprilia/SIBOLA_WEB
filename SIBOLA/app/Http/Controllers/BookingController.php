@@ -42,16 +42,16 @@ class BookingController extends Controller
             "id_petugas" => Auth::user()->id
         ]);
 
-        return back();
+        return redirect("owner/booking");
     }
 
-    public function edit_booking(Request $request)
+    public function edit(Request $request)
     {
         $data = [
-            "edit_booking" => Booking::where("kode_booking", $request->kode_booking)->first()
+            "edit" => Booking::where("kode_booking", $request->kode_booking)->first()
         ];
 
-        return view('/owner/booking/edit_booking', $data);
+        return view('/owner/booking/edit', $data);
     }
 
     public function simpan_booking(Request $request)

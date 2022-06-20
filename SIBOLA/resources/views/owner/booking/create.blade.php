@@ -61,12 +61,12 @@
                                 <div class="form-group">
                                     <label for="tanggal_booking"> Tanggal Booking </label>
                                     <input type="date" id="tanggal_booking" name="tanggal_booking" class="form-control"
-                                        placeholder="Masukkan Jenis Lapangan">
+                                        placeholder="Masukkan Tanggal Booking">
                                 </div>
                                 <div class="form-group">
                                     <label for="harga"> Harga </label>
                                     <input type="double" id="harga" name="harga" class="form-control"
-                                        placeholder="Masukkan Jenis Lapangan">
+                                        placeholder="Masukkan Harga">
                                 </div>
                             </div>
                             <div class="box-footer">

@@ -74,6 +74,9 @@ Route::group(["middleware" => "admin"], function () {
         Route::put("/arena/simpan", [ArenaController::class, "simpan_arena"]);
         Route::delete("/arena/{kode_arena}", [ArenaController::class, "destroy"]);
         Route::resource("/arena", ArenaController::class);
+
+        Route::get("/booking/edit_booking", [BookingController::class, "edit_booking"]);
+        Route::put("/booking/simpan", [BookingController::class, "simpan_booking"]);
         Route::resource("/booking", BookingController::class);
     });
 

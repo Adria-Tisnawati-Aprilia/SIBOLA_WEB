@@ -86,12 +86,12 @@
                 @csrf
                 <div class="box-body">
                     <div class="form-group">
-                        <label for="kode_lapangan" class="sr-only">Kode Lapangan</label>
+                        <label for="kode_lapangan">Kode Lapangan</label>
                         <input type="text" id="kode_lapangan" class="form-control" placeholder="Kode Lapangan"
                         name="kode_lapangan">
                     </div>
                     <div class="form-group">
-                        <label for="kode_arena" class="sr-only">Kode Arena</label>
+                        <label for="kode_arena">Kode Arena</label>
                         <select name="kode_arena" class="form-control" id="kode_arena">
                             <option value="">- Pilih -</option>
                             @foreach ($data_arena as $data)
@@ -102,39 +102,14 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="nama_lapangan" class="sr-only">Nama Lapangan</label>
+                        <label for="nama_lapangan">Nama Lapangan</label>
                         <input type="text" id="nama_lapangan" class="form-control" placeholder="Nama Lapangan"
                         name="nama_lapangan">
                     </div>
                     <div class="form-group">
-                        <label for="alas_lapangan" class="sr-only">Alas Lapangan</label>
-                        <input type="text" id="alas_lapangan" class="form-control" placeholder="Alas Lapangan"
-                        name="alas_lapangan">
-                    </div>
-                    <div class="form-group">
-                        <label for="id_jenis_lapangan" class="sr-only">Id Jenis Lapangan</label>
-                        <input type="text" id="id_jenis_lapangan" class="form-control" placeholder="Id Jenis Lapangan"
-                        name="id_jenis_lapangan">
-                    </div>
-                    <div class="form-group">
-                        <label for="ukuran" class="sr-only">Ukuran</label>
-                        <input type="text" id="ukuran" class="form-control" placeholder="ukuran"
-                        name="ukuran">
-                    </div>
-                    <div class="form-group">
-                        <label for="harga" class="sr-only">Harga</label>
+                        <label for="harga">Harga</label>
                         <input type="double" id="harga" class="form-control" placeholder="Harga"
                         name="harga">
-                    </div>
-                    <div class="form-group">
-                        <label for="status" class="sr-only">Status</label>
-                        <input type="text" id="status" class="form-control" placeholder="Status"
-                        name="status">
-                    </div>
-                    <div class="form-group">
-                        <label for="id_kategori_lapangan" class="sr-only">Id Kategori Lapangan</label>
-                        <input type="text" id="id_kategori_lapangan" class="form-control" placeholder="Id Kategori Lapangan"
-                        name="id_kategori_lapangan">
                     </div>
                 </div>
                 <div class="modal-footer">

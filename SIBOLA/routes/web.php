@@ -91,6 +91,8 @@ Route::group(["middleware" => "admin"], function () {
         Route::resource("/pembayaran", PembayaranController::class);
     });
 
+    Route::get("/admin/informasi_login", [AppController::class, "informasi_login"]);
+
     Route::get("/arena/edit_arena", [ArenaController::class, "edit_arena"]);
     Route::put("/arena/simpan", [ArenaController::class, "update"]);
     Route::delete("/arena/{kode_arena}", [ArenaController::class, "destroy"]);

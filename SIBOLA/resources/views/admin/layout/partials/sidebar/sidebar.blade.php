@@ -115,7 +115,12 @@
                 <li><a href="{{ url('/owner/laporan/') }}"><i class="fa fa-circle-o"></i> Laporan </a></li>
             </ul>
         </li>
+        <li>
+            <a href="{{ url('/admin/informasi_login') }}">
+                <i class="fa fa-book"></i>
+                <span>Informasi Login</span>
+            </a>
+        </li>
         </ul>
-
     </section>
 </aside>

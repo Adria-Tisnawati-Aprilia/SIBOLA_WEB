@@ -75,6 +75,11 @@
                                 <i class="fa fa-circle-o"></i> Kategori Lapangan
                             </a>
                         </li>
+                        <li>
+                            <a href="{{ url('/owner/petugas_owner') }}">
+                                <i class="fa fa-circle-o"></i> Petugas Owner
+                            </a>
+                        </li>
                     @endcan
                 </ul>
             </li>

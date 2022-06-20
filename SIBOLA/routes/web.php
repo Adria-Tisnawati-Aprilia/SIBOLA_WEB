@@ -11,6 +11,7 @@ use App\Http\Controllers\LapanganController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OwnerController;
+use App\Http\Controllers\PetugasOwnerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -59,6 +60,11 @@ Route::group(["middleware" => "admin"], function () {
         Route::get("/fasilitas/edit", [FasilitasController::class, "edit"]);
         Route::put("/fasilitas/simpan", [FasilitasController::class, "update"]);
         Route::resource("fasilitas", FasilitasController::class);
+
+        // Data Petugas Owner
+        Route::get("/petugas_owner/edit", [PetugasOwnerController::class, "edit"]);
+        Route::put("/petugas_owner/simpan", [PetugasOwnerController::class, "update"]);
+        Route::resource("petugas_owner", PetugasOwnerController::class);
 
         Route::get("/lapangan/edit_lapangan", [LapanganController::class, "edit_lapangan"]);
         Route::put("/lapangan/simpan", [LapanganController::class, "simpan_lapangan"]);

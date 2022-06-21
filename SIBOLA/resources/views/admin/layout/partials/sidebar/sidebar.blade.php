@@ -114,7 +114,7 @@
                 <ul class="treeview-menu">
                     <li><a href="{{ url('/owner/booking/') }}"><i class="fa fa-circle-o"></i> Booking </a></li>
                     <li><a href="{{ url('/owner/pembayaran/') }}"><i class="fa fa-circle-o"></i> Pembayaran </a></li>
-                    <li><a href="{{ url('/owner/laporan/') }}"><i class="fa fa-circle-o"></i> Laporan </a></li>
+
                 </ul>
             </li>
             <li>

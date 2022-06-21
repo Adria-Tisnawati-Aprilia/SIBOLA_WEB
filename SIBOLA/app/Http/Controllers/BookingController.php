@@ -37,7 +37,7 @@ class BookingController extends Controller
             "id_users_booking" => Auth::user()->id,
             "kode_lapangan" => $request->kode_lapangan,
             "kode_arena" => $request->kode_arena,
-            "tgl_booking" => $request->tanggal_booking,
+            "tanggal_booking" => $request->tanggal_booking,
             "harga" => $request->harga,
             "id_petugas" => Auth::user()->id
         ]);

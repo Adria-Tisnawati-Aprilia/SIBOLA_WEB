@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer("id_users_booking");
             $table->string("kode_arena");
             $table->string("kode_lapangan");
-            $table->date("tgl_booking");
+            $table->date("tanggal_booking");
             $table->double("harga");
             $table->integer("id_petugas");
         });
